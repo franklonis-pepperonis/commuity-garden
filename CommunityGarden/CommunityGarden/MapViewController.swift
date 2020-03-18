@@ -16,23 +16,24 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var targets = [ARItem]()
     let locationManager = CLLocationManager()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         
-        setupLocations()
-        
         if CLLocationManager.authorizationStatus() == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
         }
+
+        setupLocations()
     }
     
     func setupLocations() {
         
-        let thirdTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.272537, longitude:-83.743252))
-        targets.append(thirdTarget)
+        let firstTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.272537, longitude:-83.743252))
+        targets.append(firstTarget)
         
         for item in targets {
             let annotation = MapAnnotation(location: item.location.coordinate, item: item)
