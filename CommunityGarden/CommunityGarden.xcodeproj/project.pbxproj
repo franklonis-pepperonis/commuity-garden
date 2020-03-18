@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* ARItem.swift */; };
+		CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD52422D50C00392699 /* MapAnnotation.swift */; };
+		CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD72422D53E00392699 /* MapViewController.swift */; };
 		CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */; };
 		CC67CFD823F1ED5700B6B6D5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFD723F1ED5700B6B6D5 /* art.scnassets */; };
 		CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0C2DD32422D4F800392699 /* ARItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
+		CC0C2DD52422D50C00392699 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		CC0C2DD72422D53E00392699 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CC67CFD223F1ED5600B6B6D5 /* CommunityGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC67CFD723F1ED5700B6B6D5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -60,9 +66,12 @@
 		CC67CFD423F1ED5600B6B6D5 /* CommunityGarden */ = {
 			isa = PBXGroup;
 			children = (
+				CC0C2DD32422D4F800392699 /* ARItem.swift */,
+				CC0C2DD52422D50C00392699 /* MapAnnotation.swift */,
 				CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */,
-				CC67CFD723F1ED5700B6B6D5 /* art.scnassets */,
+				CC0C2DD72422D53E00392699 /* MapViewController.swift */,
 				CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */,
+				CC67CFD723F1ED5700B6B6D5 /* art.scnassets */,
 				CC67CFDB23F1ED5700B6B6D5 /* Main.storyboard */,
 				CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */,
 				CC67CFE023F1ED5700B6B6D5 /* LaunchScreen.storyboard */,
@@ -152,8 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */,
 				CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */,
 				CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */,
+				CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */,
+				CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

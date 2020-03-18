@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dvl-eC-CJg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--Map View Controller-->
+        <scene sceneID="HuE-Pf-YRx">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="dvl-eC-CJg" customClass="MapViewController" customModule="communityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jz5-zi-IZD"/>
+                        <viewControllerLayoutGuide type="bottom" id="sV3-hI-XV0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JOh-oj-TQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDL-bE-FqN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dvl-eC-CJg" id="W1e-ic-s8J"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WDL-bE-FqN" firstAttribute="top" secondItem="jz5-zi-IZD" secondAttribute="bottom" id="Ic9-yt-YGT"/>
+                            <constraint firstItem="WDL-bE-FqN" firstAttribute="leading" secondItem="JOh-oj-TQk" secondAttribute="leading" id="R31-Ky-8d0"/>
+                            <constraint firstItem="sV3-hI-XV0" firstAttribute="top" secondItem="WDL-bE-FqN" secondAttribute="bottom" id="TM6-Od-qQb"/>
+                            <constraint firstAttribute="trailing" secondItem="WDL-bE-FqN" secondAttribute="trailing" id="Ua2-3X-odS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0yg-C1-eaV"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="mapView" destination="WDL-bE-FqN" id="aHR-3k-8ow"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-J7-Hbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-546" y="139"/>
         </scene>
     </scenes>
 </document>
