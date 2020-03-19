@@ -47,20 +47,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-R9-uFz">
-                                <rect key="frame" x="-45" y="537" width="347" height="185"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-Lb-eZo">
+                                <rect key="frame" x="332" y="622" width="62" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="plantCollection"/>
+                                <state key="normal" image="shop"/>
                                 <connections>
-                                    <segue destination="4ds-ez-69E" kind="presentation" id="Ynn-6r-j2r"/>
+                                    <segue destination="uFB-LQ-4MA" kind="presentation" id="NzO-UE-Llg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REx-DF-43A">
-                                <rect key="frame" x="264" y="556" width="254" height="136"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-ps-zBP">
+                                <rect key="frame" x="47" y="620" width="69" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="shop"/>
+                                <state key="normal" image="plantCollection"/>
                                 <connections>
-                                    <segue destination="STp-m8-6HK" kind="presentation" id="YyB-mU-MUz"/>
+                                    <segue destination="V00-yf-nY6" kind="presentation" id="H9X-11-AFN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,39 +85,39 @@
             <point key="canvasLocation" x="-547.82608695652175" y="138.58695652173915"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="g8D-Xm-l6w">
+        <scene sceneID="Cbz-FN-9sy">
             <objects>
-                <viewController id="4ds-ez-69E" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X8Y-sJ-wcm">
+                <viewController id="V00-yf-nY6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8an-ch-tlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jAJ-lx-B5r"/>
+                        <viewLayoutGuide key="safeArea" id="Aua-xi-0U7"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kN8-vo-g4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVd-hE-dbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-963" y="889"/>
+            <point key="canvasLocation" x="-860" y="895"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="QmB-M2-EQ4">
+        <scene sceneID="IEb-DJ-8Pc">
             <objects>
-                <viewController id="STp-m8-6HK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zcs-qw-OuV">
+                <viewController id="uFB-LQ-4MA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kl0-nh-tsP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gG4-Un-2zs"/>
+                        <viewLayoutGuide key="safeArea" id="KhC-cK-eFP"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tmP-Wm-y6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0S-3L-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="898"/>
+            <point key="canvasLocation" x="228" y="902"/>
         </scene>
     </scenes>
     <resources>
         <image name="leaf" width="431" height="368"/>
-        <image name="plantCollection" width="1280" height="720"/>
-        <image name="shop" width="1280" height="720"/>
+        <image name="plantCollection" width="72" height="72"/>
+        <image name="shop" width="109" height="108"/>
     </resources>
 </document>
