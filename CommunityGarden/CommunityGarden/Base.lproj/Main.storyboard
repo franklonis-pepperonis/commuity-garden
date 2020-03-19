@@ -11,11 +11,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Georgia.ttf">
-            <string>Georgia</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Map View Controller-->
         <scene sceneID="HuE-Pf-YRx">
@@ -35,18 +30,14 @@
                                     <outlet property="delegate" destination="dvl-eC-CJg" id="W1e-ic-s8J"/>
                                 </connections>
                             </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="25" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-wk-wEb">
-                                <rect key="frame" x="369" y="79" width="45" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-ps-zBP">
+                                <rect key="frame" x="47" y="620" width="69" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOi-Fw-G2i">
-                                <rect key="frame" x="303" y="79" width="68" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
+                                <state key="normal" image="plantCollection"/>
+                                <connections>
+                                    <segue destination="V00-yf-nY6" kind="presentation" id="H9X-11-AFN"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-Lb-eZo">
                                 <rect key="frame" x="332" y="622" width="62" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,13 +46,26 @@
                                     <segue destination="uFB-LQ-4MA" kind="presentation" id="NzO-UE-Llg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-ps-zBP">
-                                <rect key="frame" x="47" y="620" width="69" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXD-bT-mJt">
+                                <rect key="frame" x="316" y="85" width="98" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plantCollection"/>
-                                <connections>
-                                    <segue destination="V00-yf-nY6" kind="presentation" id="H9X-11-AFN"/>
-                                </connections>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="leaf">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="25">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +120,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="leaf" width="431" height="368"/>
+        <image name="leaf" width="70" height="60"/>
         <image name="plantCollection" width="72" height="72"/>
         <image name="shop" width="109" height="108"/>
     </resources>
