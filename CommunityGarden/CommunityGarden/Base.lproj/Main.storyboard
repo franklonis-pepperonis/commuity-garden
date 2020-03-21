@@ -24,7 +24,7 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4X-Xz-hJ1">
-                                <rect key="frame" x="14" y="10" width="48" height="53"/>
+                                <rect key="frame" x="14" y="93.999999999999886" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
@@ -33,15 +33,15 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="jE1-cx-lG2">
-                                <rect key="frame" x="194" y="18" width="63" height="32"/>
+                                <rect key="frame" x="194" y="104" width="63" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water-can" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-PA-maS">
-                                <rect key="frame" x="298" y="18" width="71" height="37"/>
+                                <rect key="frame" x="298" y="104" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nye-m3-M46">
-                                <rect key="frame" x="250" y="19" width="53" height="34"/>
+                                <rect key="frame" x="250" y="104" width="53" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Vo-Ddh">
-                                <rect key="frame" x="358" y="19" width="53" height="34"/>
+                                <rect key="frame" x="361" y="104" width="53" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,21 +75,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvI-Uh-aSA">
-                                <rect key="frame" x="301" y="142" width="65" height="30"/>
+                                <rect key="frame" x="329" y="201" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Plant Info"/>
                                 <connections>
                                     <segue destination="bXZ-fM-jI6" kind="popoverPresentation" popoverAnchorView="bvI-Uh-aSA" id="Mw7-KF-OhH">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-jj-qi0" userLabel="Profile Button">
-                                <rect key="frame" x="20" y="95" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="2DD-f4-Bhd" kind="show" id="n67-d2-V0k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="d85-fJ-oqa"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="i6x-sE-uDQ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="WDL-bE-FqN" id="aHR-3k-8ow"/>
@@ -265,14 +258,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-oG-ZVb" userLabel="Back Button">
-                                <rect key="frame" x="20" y="86" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="dvl-eC-CJg" kind="showDetail" id="tnT-0r-gG1"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@fraluo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJM-4J-knV" userLabel="Username Label">
                                 <rect key="frame" x="177" y="185" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -322,6 +307,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-oe-ekQ">
+                                <rect key="frame" x="20" y="80" width="40" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="arrow.left.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="dvl-eC-CJg" kind="show" id="RJc-xT-2QH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hbM-qc-S8d"/>
@@ -350,39 +344,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">	Dypsis decaryi is a palm tree commonly known as the triangle palm. It is indigenous to the Madagascan rainforest. Some specimens grow to a height of some 15 metres (49 ft) in the wild. It is relatively new to cultivation however, so outside its native habitat it rarely achieves anything like that height. The leaves are about 2.5 metres (8 ft 2 in) in length, growing almost upright from the trunk and arching gracefully outward about a metre from their tips. The leaf bases are arranged in three vertical columns set about 120 degrees apart on the main stem, forming a triangular shape in cross section. This shape has given rise to the palm's common name.</mutableString>
+                                <string key="text">	Dypsis decaryi is a palm tree commonly known as the triangle palm. It is indigenous to the Madagascan rainforest. Some specimens grow to a height of some 15 metres (49 ft) in the wild. It is relatively new to cultivation however, so outside its native habitat it rarely achieves anything like that height. The leaves are about 2.5 metres (8 ft 2 in) in length, growing almost upright from the trunk and arching gracefully outward about a metre from their tips. The leaf bases are arranged in three vertical columns set about 120 degrees apart on the main stem, forming a triangular shape in cross section. This shape has given rise to the palm's common name.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-a5-8Jk">
-                                <rect key="frame" x="11" y="11.999999999999886" width="48" height="53"/>
+                                <rect key="frame" x="11" y="84.999999999999886" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="2DD-f4-Bhd" kind="presentation" id="QOM-g1-wdV"/>
+                                    <segue destination="2DD-f4-Bhd" kind="show" id="tTE-Js-fGh"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-mH-wnu">
-                                <rect key="frame" x="191" y="20" width="63" height="32"/>
+                                <rect key="frame" x="191" y="83" width="63" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water-can" translatesAutoresizingMaskIntoConstraints="NO" id="niV-lH-kcn">
-                                <rect key="frame" x="295" y="20" width="71" height="37"/>
+                                <rect key="frame" x="291" y="83" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DdS-s7-8Ld">
-                                <rect key="frame" x="247" y="21" width="53" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-00-exq">
-                                <rect key="frame" x="355" y="21" width="53" height="34"/>
+                                <rect key="frame" x="247" y="82" width="53" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -408,6 +393,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-00-exq">
+                                <rect key="frame" x="361" y="86" width="53" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.75902957872404797" green="1" blue="0.75723985182076459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.064530920901457428" green="0.64400501943005184" blue="0.012866971573758008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -435,6 +429,7 @@
         <image name="water-can" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QOM-g1-wdV"/>
+        <segue reference="tTE-Js-fGh"/>
+        <segue reference="DZh-4G-qCD"/>
     </inferredMetricsTieBreakers>
 </document>
