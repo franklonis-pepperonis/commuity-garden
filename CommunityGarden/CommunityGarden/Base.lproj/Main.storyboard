@@ -255,6 +255,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="2DD-f4-Bhd" kind="show" id="xh8-hd-WO5"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="ZPe-kK-MpU">
                                 <rect key="frame" x="189" y="14" width="63" height="32"/>
@@ -338,7 +341,7 @@
         <scene sceneID="K4Q-VH-kWr">
             <objects>
                 <viewController id="2DD-f4-Bhd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wbb-ZT-Llb">
+                    <view key="view" contentMode="scaleToFill" id="wbb-ZT-Llb" customClass="ProfileInfoView" customModule="CommunityGarden" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -527,7 +530,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e6z-HJ-H1g"/>
-        <segue reference="8qF-Bd-GIp"/>
-        <segue reference="DZh-4G-qCD"/>
+        <segue reference="xh8-hd-WO5"/>
+        <segue reference="RJc-xT-2QH"/>
     </inferredMetricsTieBreakers>
 </document>
