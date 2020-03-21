@@ -13,12 +13,8 @@
         <scene sceneID="HuE-Pf-YRx">
             <objects>
                 <viewController id="dvl-eC-CJg" customClass="MapViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jz5-zi-IZD"/>
-                        <viewControllerLayoutGuide type="bottom" id="sV3-hI-XV0"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JOh-oj-TQk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDL-bE-FqN">
@@ -27,6 +23,41 @@
                                     <outlet property="delegate" destination="dvl-eC-CJg" id="W1e-ic-s8J"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4X-Xz-hJ1">
+                                <rect key="frame" x="14" y="10" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="2DD-f4-Bhd" kind="presentation" id="YSD-Uc-l2q"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="jE1-cx-lG2">
+                                <rect key="frame" x="194" y="18" width="63" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water-can" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-PA-maS">
+                                <rect key="frame" x="298" y="18" width="71" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nye-m3-M46">
+                                <rect key="frame" x="250" y="19" width="53" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Vo-Ddh">
+                                <rect key="frame" x="358" y="19" width="53" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-ps-zBP">
                                 <rect key="frame" x="47" y="620" width="69" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,37 +74,26 @@
                                     <segue destination="uFB-LQ-4MA" kind="presentation" id="NzO-UE-Llg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXD-bT-mJt">
-                                <rect key="frame" x="316" y="85" width="98" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvI-Uh-aSA">
+                                <rect key="frame" x="301" y="142" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="leaf">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="25">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal" title="Plant Info"/>
+                                <connections>
+                                    <segue destination="bXZ-fM-jI6" kind="popoverPresentation" popoverAnchorView="bvI-Uh-aSA" id="Mw7-KF-OhH">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sV3-hI-XV0" firstAttribute="top" secondItem="WDL-bE-FqN" secondAttribute="bottomMargin" id="Gd8-2X-1I0"/>
-                            <constraint firstItem="WDL-bE-FqN" firstAttribute="top" secondItem="jz5-zi-IZD" secondAttribute="bottom" id="Ic9-yt-YGT"/>
+                            <constraint firstItem="d85-fJ-oqa" firstAttribute="bottom" secondItem="WDL-bE-FqN" secondAttribute="bottomMargin" id="Gd8-2X-1I0"/>
+                            <constraint firstItem="WDL-bE-FqN" firstAttribute="top" secondItem="d85-fJ-oqa" secondAttribute="top" id="Ic9-yt-YGT"/>
                             <constraint firstItem="WDL-bE-FqN" firstAttribute="leading" secondItem="JOh-oj-TQk" secondAttribute="leadingMargin" constant="-16" id="R31-Ky-8d0"/>
-                            <constraint firstItem="sV3-hI-XV0" firstAttribute="top" secondItem="WDL-bE-FqN" secondAttribute="bottomMargin" id="TM6-Od-qQb"/>
-                            <constraint firstAttribute="trailing" secondItem="WDL-bE-FqN" secondAttribute="trailingMargin" id="Ua2-3X-odS"/>
+                            <constraint firstItem="d85-fJ-oqa" firstAttribute="bottom" secondItem="WDL-bE-FqN" secondAttribute="bottomMargin" id="TM6-Od-qQb"/>
+                            <constraint firstItem="d85-fJ-oqa" firstAttribute="trailing" secondItem="WDL-bE-FqN" secondAttribute="trailingMargin" id="Ua2-3X-odS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0yg-C1-eaV"/>
+                        <viewLayoutGuide key="safeArea" id="d85-fJ-oqa"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -124,7 +144,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Y4M-qS-2eG"/>
+                        <viewLayoutGuide key="safeArea" id="Jpg-v4-0lf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Living Plants" id="Iqw-5T-iQk"/>
                 </viewController>
@@ -177,7 +197,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="zyW-g2-8Aq"/>
+                        <viewLayoutGuide key="safeArea" id="pkF-B3-qJP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Collection" id="WfU-oK-0lb" userLabel="Your Plants"/>
                 </viewController>
@@ -211,7 +231,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KhC-cK-eFP"/>
+                        <viewLayoutGuide key="safeArea" id="CIr-Az-J3S"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0S-3L-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,7 +243,7 @@
             <objects>
                 <viewController id="2DD-f4-Bhd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbb-ZT-Llb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Franklin Luo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blj-9s-MM0" userLabel="User Profile Label">
@@ -275,18 +295,116 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Lqk-pq-Lpw"/>
+                        <viewLayoutGuide key="safeArea" id="hbM-qc-S8d"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBA-qq-AmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1568.1159420289857" y="138.58695652173915"/>
         </scene>
+        <!--Plant Info View Controller-->
+        <scene sceneID="EgZ-lV-Ob6">
+            <objects>
+                <viewController id="bXZ-fM-jI6" customClass="PlantInfoViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0I6-ZR-pKp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trianglepalm" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-jp-dLB">
+                                <rect key="frame" x="125" y="135" width="166" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8ja-Ow-UbE">
+                                <rect key="frame" x="45" y="395" width="327" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <mutableString key="text">	Dypsis decaryi is a palm tree commonly known as the triangle palm. It is indigenous to the Madagascan rainforest. Some specimens grow to a height of some 15 metres (49 ft) in the wild. It is relatively new to cultivation however, so outside its native habitat it rarely achieves anything like that height. The leaves are about 2.5 metres (8 ft 2 in) in length, growing almost upright from the trunk and arching gracefully outward about a metre from their tips. The leaf bases are arranged in three vertical columns set about 120 degrees apart on the main stem, forming a triangular shape in cross section. This shape has given rise to the palm's common name.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-a5-8Jk">
+                                <rect key="frame" x="11" y="11.999999999999886" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="2DD-f4-Bhd" kind="presentation" id="QOM-g1-wdV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-mH-wnu">
+                                <rect key="frame" x="191" y="20" width="63" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water-can" translatesAutoresizingMaskIntoConstraints="NO" id="niV-lH-kcn">
+                                <rect key="frame" x="295" y="20" width="71" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DdS-s7-8Ld">
+                                <rect key="frame" x="247" y="21" width="53" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-00-exq">
+                                <rect key="frame" x="355" y="21" width="53" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75902957869999998" green="1" blue="0.75723985179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEu-4g-s67">
+                                <rect key="frame" x="45" y="136" width="40" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="arrow.left.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="dvl-eC-CJg" kind="presentation" id="DZh-4G-qCD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Triangle Palm" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R2V-fG-DfL">
+                                <rect key="frame" x="45" y="349" width="327" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75902957872404797" green="1" blue="0.75723985182076459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.064530920901457428" green="0.64400501943005184" blue="0.012866971573758008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Ub5-MQ-F2L"/>
+                    </view>
+                    <connections>
+                        <outlet property="PlantDescription" destination="8ja-Ow-UbE" id="uFW-s4-t36"/>
+                        <outlet property="PlantImage" destination="pc9-jp-dLB" id="OVa-54-S6I"/>
+                        <outlet property="PlantName" destination="R2V-fG-DfL" id="E2Y-Sl-wba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhF-QQ-xe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.86956521739137" y="138.58695652173915"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.left.circle.fill" catalog="system" width="64" height="60"/>
         <image name="leaf" width="70" height="60"/>
         <image name="male_gardener" width="550" height="400"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="plantCollection" width="72" height="72"/>
         <image name="shop" width="109" height="108"/>
+        <image name="trianglepalm" width="416" height="520"/>
+        <image name="water-can" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QOM-g1-wdV"/>
+    </inferredMetricsTieBreakers>
 </document>
