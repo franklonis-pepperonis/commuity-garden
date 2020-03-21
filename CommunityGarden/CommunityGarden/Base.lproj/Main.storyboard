@@ -85,16 +85,23 @@
             </objects>
             <point key="canvasLocation" x="-547.82608695652175" y="138.58695652173915"/>
         </scene>
-        <!--Item 2-->
+        <!--Living Plants-->
         <scene sceneID="f1T-xf-wxK">
             <objects>
-                <viewController id="V00-yf-nY6" sceneMemberID="viewController">
+                <viewController id="V00-yf-nY6" customClass="LivePlantsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8an-ch-tlW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Living Plants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zc-Nd-xab">
+                                <rect key="frame" x="157.83327214634119" y="42" width="97" height="20.999999999999773"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1g-AV-r3b">
-                                <rect key="frame" x="87" y="294" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="65" width="414" height="602"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RcP-Ii-y5H">
@@ -119,22 +126,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Y4M-qS-2eG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Iqw-5T-iQk"/>
+                    <tabBarItem key="tabBarItem" title="Living Plants" id="Iqw-5T-iQk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbr-FZ-lDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023.1884057971015" y="1542.3913043478262"/>
         </scene>
-        <!--Item 1-->
+        <!--Your Collection-->
         <scene sceneID="9dj-Vl-UVM">
             <objects>
-                <viewController id="WI9-Cn-7l7" sceneMemberID="viewController">
+                <viewController id="WI9-Cn-7l7" customClass="YourCollectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5e-pb-Eav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="od1-lG-mNJ">
-                                <rect key="frame" x="110" y="294" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="49" width="414" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a7Z-01-vzc">
@@ -154,20 +161,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8I-DT-uZX">
+                                <rect key="frame" x="186" y="20" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m66-Ha-jIa">
+                                <rect key="frame" x="148.9537061320284" y="20" width="115.99999999999989" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zyW-g2-8Aq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="WfU-oK-0lb"/>
+                    <tabBarItem key="tabBarItem" title="Your Collection" id="WfU-oK-0lb" userLabel="Your Plants"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBy-9B-lqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023.1884057971015" y="883.69565217391312"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Collection Tab Controller-->
         <scene sceneID="orw-0a-6lr">
             <objects>
-                <tabBarController id="qLT-kA-zIZ" sceneMemberID="viewController">
+                <tabBarController id="qLT-kA-zIZ" customClass="CollectionTabController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIh-hg-kcI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,6 +196,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="WI9-Cn-7l7" kind="relationship" relationship="viewControllers" id="mWf-vE-cUw"/>
+                        <segue destination="V00-yf-nY6" kind="relationship" relationship="viewControllers" id="KwP-Ru-9J1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59s-mM-0lE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

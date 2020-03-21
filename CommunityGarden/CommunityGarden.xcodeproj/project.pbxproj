@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */; };
+		347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */; };
 		CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* ARItem.swift */; };
 		CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD52422D50C00392699 /* MapAnnotation.swift */; };
 		CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD72422D53E00392699 /* MapViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCollectionViewController.swift; sourceTree = "<group>"; };
+		347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePlantsViewController.swift; sourceTree = "<group>"; };
 		CC0C2DD32422D4F800392699 /* ARItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		CC0C2DD52422D50C00392699 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		CC0C2DD72422D53E00392699 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */,
 				CC67CFE023F1ED5700B6B6D5 /* LaunchScreen.storyboard */,
 				CC67CFE323F1ED5700B6B6D5 /* Info.plist */,
+				347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */,
+				347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */,
 			);
 			path = CommunityGarden;
 			sourceTree = "<group>";
@@ -162,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */,
+				347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */,
 				CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */,
+				347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */,
 				CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */,
 				CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */,
 				CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */,
