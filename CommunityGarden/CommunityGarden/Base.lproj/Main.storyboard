@@ -245,7 +245,7 @@
         <!--Plant Shop-->
         <scene sceneID="IEb-DJ-8Pc">
             <objects>
-                <viewController id="uFB-LQ-4MA" userLabel="Plant Shop" sceneMemberID="viewController">
+                <viewController id="uFB-LQ-4MA" userLabel="Plant Shop" customClass="PlantShopViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kl0-nh-tsP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,11 +337,11 @@
             </objects>
             <point key="canvasLocation" x="228" y="902"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Info View Controller-->
         <scene sceneID="K4Q-VH-kWr">
             <objects>
-                <viewController id="2DD-f4-Bhd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wbb-ZT-Llb" customClass="ProfileInfoView" customModule="CommunityGarden" customModuleProvider="target">
+                <viewController id="2DD-f4-Bhd" customClass="ProfileInfoViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbb-ZT-Llb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
