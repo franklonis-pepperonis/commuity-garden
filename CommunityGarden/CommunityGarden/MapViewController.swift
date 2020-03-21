@@ -10,10 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func backToMapView( _ segue: UIStoryboardSegue) {
+        
+    }
     
     var targets = [ARItem]()
     let locationManager = CLLocationManager()
@@ -30,7 +33,7 @@ class MapViewController: UIViewController {
 
         setupLocations()
     }
-    
+
     func setupLocations() {
         
         let firstTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.272537, longitude:-83.743252))
