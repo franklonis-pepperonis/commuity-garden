@@ -45,9 +45,9 @@ Our current project is stored in a folder called CommunityGarden which stores ou
             
             |------YourCollectionViewController.swift                #View Controller for User Plant Collection
             
-|-----Resources                                                      #Pictures and Icons
+|-----Resources                                                      
    
-|-----Unity-Iphone.xCodeProject                                      #AR portion of Project
+|-----Unity-Iphone.xCodeProject                                     
 
 Build Instructions:
 
