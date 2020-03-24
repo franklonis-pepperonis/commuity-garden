@@ -16,23 +16,37 @@ Our current project is stored in a folder called CommunityGarden which stores ou
 
 |--CommunityGarden
 
-   |-----CommunityGarden.xCodeProject                             #Core XCode Project
+      |-----CommunityGarden.xCodeProject                             #Core XCode Project
    
-   |-----CommunityGarden                                          #SRC for CommunityGarden
-         |------Assets.xcassets                                   #Pictures and Icons for the xCode Project
-         |------Base.lproj                                        #Storyboards for Project
-         |------ARItem.swift                                      #SRC for Garden AR object
-         |------AppDelegate.swift                                 #Basic Xcode Functionality
-         |------Info.plist                                        #Functionality for Location Services
-         |------LivePlantsViewController.swift                    #View Controller for Toggle Button in Plant Collection View
-         |------MapAnnotation.swift                               #SRC for MapKit Location Services
-         |------PlantInfoViewController.swift                     #View Controller for Plant Information View
-         |------PlantShopViewController.swift                     #View Controller for Plant Shop Information View 
-         |------ProfileInfoViewController.swift                   #View Controller for User Profile View
-         |------ViewController.swift                              #Default View Controller
-         |------YourCollectionViewController.swift                #View Controller for User Plant Collection
-   |-----Resources                                                #Pictures and Icons
-   |-----Unity-Iphone.xCodeProject                                #AR portion of Project
+      |-----CommunityGarden                                          #SRC for CommunityGarden
+      
+            |------Assets.xcassets                                   #Pictures and Icons for the xCode Project
+            
+            |------Base.lproj                                        #Storyboards for Project
+            
+            |------ARItem.swift                                      #SRC for Garden AR object
+            
+            |------AppDelegate.swift                                 #Basic Xcode Functionality
+            
+            |------Info.plist                                        #Functionality for Location Services
+            
+            |------LivePlantsViewController.swift                    #View Controller for Toggle Button View
+            
+            |------MapAnnotation.swift                               #SRC for MapKit Location Services
+            
+            |------PlantInfoViewController.swift                     #View Controller for Plant Information View
+            
+            |------PlantShopViewController.swift                     #View Controller for Plant Shop Information View
+            
+            |------ProfileInfoViewController.swift                   #View Controller for User Profile View
+            
+            |------ViewController.swift                              #Default View Controller
+            
+            |------YourCollectionViewController.swift                #View Controller for User Plant Collection
+            
+|-----Resources                                                      #Pictures and Icons
+   
+|-----Unity-Iphone.xCodeProject                                      #AR portion of Project
 
 Build Instructions:
 
