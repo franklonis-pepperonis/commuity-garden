@@ -15,7 +15,9 @@ Folder/File Structure:
 Our current project is stored in a folder called CommunityGarden which stores our similarily named XCode Project. In the CommunityGarden Folder, there is a main storyboard which contains all of our views and UI's. We also have 7 view controllers for each of our 7 views, which we split up so each one of our group members created one view. 
 
 |--CommunityGarden
+
    |-----CommunityGarden.xCodeProject                             #Core XCode Project
+   
    |-----CommunityGarden                                          #SRC for CommunityGarden
          |------Assets.xcassets                                   #Pictures and Icons for the xCode Project
          |------Base.lproj                                        #Storyboards for Project
