@@ -15,6 +15,9 @@
 		CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* ARItem.swift */; };
 		CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD52422D50C00392699 /* MapAnnotation.swift */; };
 		CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD72422D53E00392699 /* MapViewController.swift */; };
+		CC339AFE243BCF6C00C971C7 /* StartViewController.com.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC339AFD243BCF6C00C971C7 /* StartViewController.com.swift */; };
+		CC339B00243BCFFB00C971C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC339AFF243BCFFB00C971C7 /* LoginViewController.swift */; };
+		CC339B02243BD01A00C971C7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC339B01243BD01A00C971C7 /* SignupViewController.swift */; };
 		CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */; };
 		CC67CFD823F1ED5700B6B6D5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFD723F1ED5700B6B6D5 /* art.scnassets */; };
 		CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */; };
@@ -33,6 +36,9 @@
 		CC0C2DD32422D4F800392699 /* ARItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		CC0C2DD52422D50C00392699 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		CC0C2DD72422D53E00392699 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CC339AFD243BCF6C00C971C7 /* StartViewController.com.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.com.swift; sourceTree = "<group>"; };
+		CC339AFF243BCFFB00C971C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC339B01243BD01A00C971C7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CC67CFD223F1ED5600B6B6D5 /* CommunityGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC67CFD723F1ED5700B6B6D5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				CC0C2DD32422D4F800392699 /* ARItem.swift */,
+				CC339AFD243BCF6C00C971C7 /* StartViewController.com.swift */,
+				CC339AFF243BCFFB00C971C7 /* LoginViewController.swift */,
+				CC339B01243BD01A00C971C7 /* SignupViewController.swift */,
 				CC0C2DD52422D50C00392699 /* MapAnnotation.swift */,
 				CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */,
 				CC0C2DD72422D53E00392699 /* MapViewController.swift */,
@@ -176,13 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC339B00243BCFFB00C971C7 /* LoginViewController.swift in Sources */,
 				CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */,
+				CC339AFE243BCF6C00C971C7 /* StartViewController.com.swift in Sources */,
 				347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */,
 				CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */,
 				497C71172426A5FA00B68B73 /* ProfileInfoViewController.swift in Sources */,
 				347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */,
 				CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */,
 				6C7589462426A88E00AAC082 /* PlantShopViewController.swift in Sources */,
+				CC339B02243BD01A00C971C7 /* SignupViewController.swift in Sources */,
 				CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */,
 				1D5CF225242595260015671E /* PlantInfoViewController.swift in Sources */,
 				CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */,
