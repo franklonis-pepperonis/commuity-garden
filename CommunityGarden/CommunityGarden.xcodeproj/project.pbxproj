@@ -11,6 +11,7 @@
 		347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */; };
 		347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */; };
 		497C71172426A5FA00B68B73 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */; };
+		49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A20485243D13800069F8C6 /* GoogleService-Info.plist */; };
 		69F00B3AED446A7E4DA73D8F /* Pods_CommunityGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */; };
 		6C7589462426A88E00AAC082 /* PlantShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7589452426A88E00AAC082 /* PlantShopViewController.swift */; };
 		CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* ARItem.swift */; };
@@ -34,6 +35,7 @@
 		347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCollectionViewController.swift; sourceTree = "<group>"; };
 		347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePlantsViewController.swift; sourceTree = "<group>"; };
 		497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
+		49A20485243D13800069F8C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.release.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.release.xcconfig"; sourceTree = "<group>"; };
 		5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.debug.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7589452426A88E00AAC082 /* PlantShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantShopViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +75,6 @@
 				5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */,
 				59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +108,7 @@
 				CC0C2DD72422D53E00392699 /* MapViewController.swift */,
 				1D5CF224242595260015671E /* PlantInfoViewController.swift */,
 				CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */,
+				49A20485243D13800069F8C6 /* GoogleService-Info.plist */,
 				CC67CFDB23F1ED5700B6B6D5 /* Main.storyboard */,
 				CC67CFD723F1ED5700B6B6D5 /* art.scnassets */,
 				CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */,
@@ -193,6 +195,7 @@
 			files = (
 				CC67CFD823F1ED5700B6B6D5 /* art.scnassets in Resources */,
 				CC67CFE223F1ED5700B6B6D5 /* LaunchScreen.storyboard in Resources */,
+				49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */,
 				CC67CFDF23F1ED5700B6B6D5 /* Assets.xcassets in Resources */,
 				CC67CFDD23F1ED5700B6B6D5 /* Main.storyboard in Resources */,
 			);
