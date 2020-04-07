@@ -36,7 +36,7 @@ class MapViewController: UIViewController {
 
     func setupLocations() {
         
-        let firstTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.272537, longitude:-83.743252))
+        let firstTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.2808, longitude:-83.7430))
         targets.append(firstTarget)
         
         for item in targets {
