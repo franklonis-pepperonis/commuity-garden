@@ -236,16 +236,6 @@
                                     <segue destination="uFB-LQ-4MA" kind="presentation" id="NzO-UE-Llg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvI-Uh-aSA">
-                                <rect key="frame" x="329" y="201" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Plant Info"/>
-                                <connections>
-                                    <segue destination="bXZ-fM-jI6" kind="popoverPresentation" popoverAnchorView="bvI-Uh-aSA" id="Mw7-KF-OhH">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kva-bc-LKg" userLabel="Navigation Banner">
                                 <rect key="frame" x="4" y="0.0" width="411" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,7 +244,7 @@
                                         <rect key="frame" x="21" y="28.999999999999886" width="64" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                        <state key="normal" backgroundImage="person.circle.fill"/>
                                         <connections>
                                             <segue destination="2DD-f4-Bhd" kind="presentation" id="7Ts-zH-ggF"/>
                                         </connections>
@@ -378,7 +368,7 @@
             <objects>
                 <viewController id="DuI-OH-g6e" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XPJ-vV-KVm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_trianglepalm" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-Jc-9SI">
@@ -454,7 +444,7 @@
                                 <rect key="frame" x="245" y="304.99999999999955" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <state key="normal" backgroundImage="info.circle" catalog="system">
+                                <state key="normal" backgroundImage="info.circle">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -481,7 +471,7 @@
             <objects>
                 <viewController id="WI9-Cn-7l7" customClass="YourCollectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5e-pb-Eav">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mQ-jl-AW6">
@@ -820,7 +810,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="info.circle" width="64" height="60"/>
         <image name="leaf" width="70" height="60"/>
         <image name="male_gardener" width="550" height="400"/>
         <image name="person.circle.fill" width="64" height="60"/>
