@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlantInfoViewController: UIViewController {
 
@@ -22,6 +23,18 @@ class PlantInfoViewController: UIViewController {
         self.PlantName.layer.cornerRadius = 20
         self.PlantDescription.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
+        
+        // Set up firebase
+        let db = Firestore.firestore()
+        
+        //let ref = Database.database().reference()
+//        ref.child("Plant Info/Cactus/Description").observeSingleEvent(of: .value)
+//            {(snapshot) in
+//                let description = snapshot.value as? String
+//                print("description", description)
+//
+//        }
+        self.PlantDescription.text = "Some shit"
     }
     
 
