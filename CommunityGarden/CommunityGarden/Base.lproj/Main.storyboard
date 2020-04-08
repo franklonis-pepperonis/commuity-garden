@@ -13,10 +13,7 @@
             <objects>
                 <navigationController id="nOI-k5-ae9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XCh-vE-3Iq">
-<<<<<<< HEAD
-=======
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
->>>>>>> 97ec3fd17ab0015bb8cf1d0e84fbdd3b6b967581
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
