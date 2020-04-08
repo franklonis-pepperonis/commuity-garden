@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOI-k5-ae9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Sg-yR-17e">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -28,7 +28,7 @@
         <scene sceneID="zDS-jK-9a0">
             <objects>
                 <viewController id="7Sg-yR-17e" customClass="StartViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HWA-3C-6M1">
+                    <view key="view" contentMode="scaleToFill" id="HWA-3C-6M1" customClass="StartupViewController" customModule="CommunityGarden" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -87,14 +87,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-ki-vLi">
                                 <rect key="frame" x="57" y="351" width="306" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-YH-kDE">
                                 <rect key="frame" x="52" y="310" width="97" height="34"/>
@@ -113,7 +113,6 @@
                                 </state>
                                 <connections>
                                     <action selector="ValidateLogin:" destination="Dsl-CM-1Y4" eventType="touchUpInside" id="f9L-6F-atD"/>
-                                    <segue destination="dvl-eC-CJg" kind="presentation" id="BwZ-r2-IDc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,7 +131,7 @@
         <!--Signup View Controller-->
         <scene sceneID="hQH-ZM-Ibv">
             <objects>
-                <viewController id="yH9-Z1-Veh" customClass="SignupViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yH9-Z1-Veh" customClass="SignupViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B4z-do-We0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +182,8 @@
                                     <color key="titleColor" red="0.98412888200000004" green="1" blue="0.42991153869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dvl-eC-CJg" kind="presentation" id="g6A-z4-zFC"/>
+                                    <action selector="signUp:" destination="yH9-Z1-Veh" eventType="touchUpInside" id="IHp-hj-ihr"/>
+                                    <action selector="signUp:" destination="X3N-VE-FPN" eventType="touchUpInside" id="t8G-9q-39E"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-A8-q7a">
@@ -197,17 +197,23 @@
                         <color key="backgroundColor" red="0.59412529110000001" green="1" blue="0.60519307659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="VSW-oa-U70"/>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="Frg-LT-HOp" id="IKC-WF-fIV"/>
+                        <outlet property="retryPassword" destination="eBg-C8-VuM" id="iwh-aE-dKq"/>
+                        <outlet property="username" destination="dNm-A8-q7a" id="X6h-fo-D2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gF-P1-3EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="X3N-VE-FPN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="215.94202898550725" y="-1305.163043478261"/>
         </scene>
-        <!--Map View Controller-->
+        <!--MapViewController-->
         <scene sceneID="HuE-Pf-YRx">
             <objects>
-                <viewController id="dvl-eC-CJg" customClass="MapViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dvl-eC-CJg" customClass="MapViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOh-oj-TQk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDL-bE-FqN">
@@ -846,4 +852,7 @@
         <image name="trianglepalm" width="416" height="520"/>
         <image name="water-can" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mw7-KF-OhH"/>
+    </inferredMetricsTieBreakers>
 </document>
