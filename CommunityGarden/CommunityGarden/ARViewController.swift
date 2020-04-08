@@ -13,18 +13,21 @@ import CoreLocation
 
 class ARViewController: UIViewController {
     
+    var scene = SCNScene()
+    
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var leftIndicator: UILabel!
     @IBOutlet weak var rightIndicator: UILabel!
+    
+    
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
     
     var locationManager = CLLocationManager()
     var heading: Double = 0
     var userLocation = CLLocation()
-    let scene = SCNScene()
     let cameraNode = SCNNode()
-    let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+    let targetNode = SCNNode(geometry: SCNBox(width: 8, height: 8, length: 8, chamferRadius: 0))
     
     //temporary just one plant for now
     var plant: ARItem!
@@ -83,20 +86,100 @@ class ARViewController: UIViewController {
         self.cameraLayer = cameraLayer
       }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        loadCamera()
-        self.cameraSession?.startRunning()
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view, typically from a nib.
+            loadCamera()
+            self.cameraSession?.startRunning()
+            
+            self.locationManager.delegate = self
+        
+            self.locationManager.startUpdatingHeading()
+                
+            sceneView.scene = scene
+            cameraNode.camera = SCNCamera()
+            cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
+            scene.rootNode.addChildNode(cameraNode)
+            setupTarget()
+        }
     
+    func repositionTarget() {
+      let heading = getHeadingForDirectionFromCoordinate(from: userLocation, to: plant.location)
+        
+      let delta = heading - self.heading
+    
+      if delta < -15.0 {
+        print("Turn left")
+        leftIndicator.isHidden = false
+        rightIndicator.isHidden = true
+      } else if delta > 15 {
+        print("Turn right")
+        leftIndicator.isHidden = true
+        rightIndicator.isHidden = false
+      } else {
+        print("It's in front of you (...hopefully)")
+        leftIndicator.isHidden = true
+        rightIndicator.isHidden = true
+      }
+        
+      let distance = userLocation.distance(from: plant.location)
+      if let node = plant.itemNode {
+        if node.parent == nil {
+          node.position = SCNVector3(x: Float(delta), y: 0, z: Float(-distance))
+          scene.rootNode.addChildNode(node)
+        } else {
+          node.removeAllActions()
+          node.runAction(SCNAction.move(to: SCNVector3(x: Float(delta), y: 0, z: Float(-5)), duration: 0.2))
+        }
+      }
+    }
+    
+    func radiansToDegrees(_ radians: Double) -> Double {
+        return (radians) * (180.0 / Double.pi)
+    }
+      
+    func degreesToRadians(_ degrees: Double) -> Double {
+        return (degrees) * (Double.pi / 180.0)
+    }
+      
+    func getHeadingForDirectionFromCoordinate(from: CLLocation, to: CLLocation) -> Double {
+      //1
+      let fLat = degreesToRadians(from.coordinate.latitude)
+      let fLng = degreesToRadians(from.coordinate.longitude)
+      let tLat = degreesToRadians(to.coordinate.latitude)
+      let tLng = degreesToRadians(to.coordinate.longitude)
+        
+      //2
+      let degree = radiansToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)))
+        
+      //3
+      if degree >= 0 {
+        return degree
+      } else {
+        return degree + 360
+      }
+    }
+    
+    func setupTarget() {
+//        let scene = SCNScene(named: "art.scnassets/ElmTree.dae")
+//        let plant = scene?.rootNode.childNode(withName: "default", recursively: true)
+//        plant?.position = SCNVector3(x: 0, y: 0, z: 0)
+//        let node = SCNNode()
+//        node.addChildNode(plant!)
+        targetNode.name = "plant"
+        self.plant.itemNode = targetNode
+    }
 }
 
+extension ARViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    //1
+    self.heading = fmod(newHeading.trueHeading, 360.0)
+    repositionTarget()
+  }
+}

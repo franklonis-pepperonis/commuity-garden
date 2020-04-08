@@ -82,7 +82,7 @@ extension MapViewController: MKMapViewDelegate {
           if let mapAnnotation = view.annotation as? MapAnnotation {
 
             viewController?.plant = mapAnnotation.item
-            
+            viewController?.userLocation = mapView.userLocation.location!
             self.present(viewController!, animated: true, completion: nil)
           }
         
