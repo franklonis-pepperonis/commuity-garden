@@ -13,6 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    var userLocation: CLLocation?
     
     @IBAction func backToMapView( _ segue: UIStoryboardSegue) {
         
@@ -48,15 +49,41 @@ class MapViewController: UIViewController {
 
 
 extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        self.userLocation = userLocation.location
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
         }
-            
+
         else {
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
             annotationView.image = UIImage(named: "garden")
             return annotationView
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        //1
+        let coordinate = view.annotation!.coordinate
+        //2
+        if let userCoordinate = userLocation {
+            //3
+            if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 1000 {
+                //4
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                if let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController {
+                    // more code later
+                    //5
+                    if let mapAnnotation = view.annotation as? MapAnnotation {
+                        //6
+                        self.present(viewController, animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
 }
