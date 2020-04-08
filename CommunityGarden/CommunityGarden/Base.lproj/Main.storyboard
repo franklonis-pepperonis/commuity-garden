@@ -835,10 +835,6 @@
             <point key="canvasLocation" x="760.86956521739137" y="138.58695652173915"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fmB-oS-YJA"/>
-        <segue reference="g6A-z4-zFC"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="leaf" width="70" height="60"/>
