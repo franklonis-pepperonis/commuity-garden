@@ -89,7 +89,7 @@ class ARViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         loadCamera()
         self.cameraSession?.startRunning()
-        
+
     }
     
     override func didReceiveMemoryWarning() {
