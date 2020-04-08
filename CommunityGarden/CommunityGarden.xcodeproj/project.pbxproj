@@ -11,6 +11,8 @@
 		347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */; };
 		347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */; };
 		497C71172426A5FA00B68B73 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */; };
+		49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A20485243D13800069F8C6 /* GoogleService-Info.plist */; };
+		69F00B3AED446A7E4DA73D8F /* Pods_CommunityGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */; };
 		6C7589462426A88E00AAC082 /* PlantShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7589452426A88E00AAC082 /* PlantShopViewController.swift */; };
 		CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* ARItem.swift */; };
 		CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD52422D50C00392699 /* MapAnnotation.swift */; };
@@ -28,10 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommunityGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5CF224242595260015671E /* PlantInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoViewController.swift; sourceTree = "<group>"; };
 		347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCollectionViewController.swift; sourceTree = "<group>"; };
 		347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePlantsViewController.swift; sourceTree = "<group>"; };
 		497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
+		49A20485243D13800069F8C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.release.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.release.xcconfig"; sourceTree = "<group>"; };
+		5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.debug.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7589452426A88E00AAC082 /* PlantShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantShopViewController.swift; sourceTree = "<group>"; };
 		CC0C2DD32422D4F800392699 /* ARItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		CC0C2DD52422D50C00392699 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
@@ -56,18 +62,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC67CFEB23F1EDEF00B6B6D5 /* MapKit.framework in Frameworks */,
+				69F00B3AED446A7E4DA73D8F /* Pods_CommunityGarden.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2191524297E4B3548BEEE3AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */,
+				59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CC67CFC923F1ED5600B6B6D5 = {
 			isa = PBXGroup;
 			children = (
 				CC67CFD423F1ED5600B6B6D5 /* CommunityGarden */,
 				CC67CFD323F1ED5600B6B6D5 /* Products */,
 				CC67CFE923F1EDEF00B6B6D5 /* Frameworks */,
+				2191524297E4B3548BEEE3AD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +108,7 @@
 				CC0C2DD72422D53E00392699 /* MapViewController.swift */,
 				1D5CF224242595260015671E /* PlantInfoViewController.swift */,
 				CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */,
+				49A20485243D13800069F8C6 /* GoogleService-Info.plist */,
 				CC67CFDB23F1ED5700B6B6D5 /* Main.storyboard */,
 				CC67CFD723F1ED5700B6B6D5 /* art.scnassets */,
 				CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */,
@@ -108,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CC67CFEA23F1EDEF00B6B6D5 /* MapKit.framework */,
+				19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC67CFE623F1ED5700B6B6D5 /* Build configuration list for PBXNativeTarget "CommunityGarden" */;
 			buildPhases = (
+				D317A9B327B79B9E1956E0BA /* [CP] Check Pods Manifest.lock */,
 				CC67CFCE23F1ED5600B6B6D5 /* Sources */,
 				CC67CFCF23F1ED5600B6B6D5 /* Frameworks */,
 				CC67CFD023F1ED5600B6B6D5 /* Resources */,
+				449F8E86F2D4D8352FD679F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,11 +160,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = FrankPepps;
 				TargetAttributes = {
 					CC67CFD123F1ED5600B6B6D5 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -173,12 +195,70 @@
 			files = (
 				CC67CFD823F1ED5700B6B6D5 /* art.scnassets in Resources */,
 				CC67CFE223F1ED5700B6B6D5 /* LaunchScreen.storyboard in Resources */,
+				49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */,
 				CC67CFDF23F1ED5700B6B6D5 /* Assets.xcassets in Resources */,
 				CC67CFDD23F1ED5700B6B6D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		449F8E86F2D4D8352FD679F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D317A9B327B79B9E1956E0BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommunityGarden-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC67CFCE23F1ED5600B6B6D5 /* Sources */ = {
@@ -237,6 +317,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -244,6 +325,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -294,6 +376,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -301,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -332,28 +416,36 @@
 		};
 		CC67CFE723F1ED5700B6B6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T285G67975;
 				INFOPLIST_FILE = CommunityGarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGarden;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		CC67CFE823F1ED5700B6B6D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T285G67975;
 				INFOPLIST_FILE = CommunityGarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGarden;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
