@@ -27,23 +27,17 @@ class PlantInfoViewController: UIViewController {
         
         // Set up firebase
         let db = Firestore.firestore()
-        db.collection("users").getDocuments() { (querySnapshot, err) in
+        db.collection("Plant Info").document("Cactus").getDocument() { (document, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
+                let data = document!.data()
+                print("\(data!["Description"])")
+                self.PlantDescription.text = "\(data!["Description"])"
             }
         }
-        //let ref = Database.database().reference()
-//        ref.child("Plant Info/Cactus/Description").observeSingleEvent(of: .value)
-//            {(snapshot) in
-//                let description = snapshot.value as? String
-//                print("description", description)
-//
-//        }
-        self.PlantDescription.text = "Some shit"
+
+    
     }
     
 

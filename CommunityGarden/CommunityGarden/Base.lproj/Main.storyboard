@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dvl-eC-CJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOI-k5-ae9">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,7 +74,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-ra-Muu">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-ra-Muu">
                                 <rect key="frame" x="53" y="154" width="143" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59412529110000001" green="1" blue="0.60519307659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,6 +112,7 @@
                                     <color key="titleColor" red="0.98412888200000004" green="1" blue="0.42991153869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="ValidateLogin:" destination="Dsl-CM-1Y4" eventType="touchUpInside" id="f9L-6F-atD"/>
                                     <segue destination="dvl-eC-CJg" kind="presentation" id="BwZ-r2-IDc"/>
                                 </connections>
                             </button>
@@ -119,6 +120,10 @@
                         <color key="backgroundColor" red="0.59412529110000001" green="1" blue="0.60519307659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="A71-F0-niS"/>
                     </view>
+                    <connections>
+                        <outlet property="Username" destination="048-I6-zXW" id="U87-XG-dTU"/>
+                        <outlet property="password" destination="gTc-ki-vLi" id="M4S-wU-9Nr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VO0-l2-S2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +137,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gx9-C1-JOf">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gx9-C1-JOf">
                                 <rect key="frame" x="62" y="163" width="143" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59412529110000001" green="1" blue="0.60519307659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -823,7 +828,7 @@
         <image name="water-can" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fmB-oS-YJA"/>
-        <segue reference="g6A-z4-zFC"/>
+        <segue reference="Mw7-KF-OhH"/>
+        <segue reference="BwZ-r2-IDc"/>
     </inferredMetricsTieBreakers>
 </document>
