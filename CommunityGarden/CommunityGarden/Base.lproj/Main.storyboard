@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -378,7 +378,7 @@
         <!--View Controller-->
         <scene sceneID="kcP-Wq-vnE">
             <objects>
-                <viewController id="DuI-OH-g6e" sceneMemberID="viewController">
+                <viewController id="DuI-OH-g6e" customClass="ARViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XPJ-vV-KVm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,6 +561,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBy-9B-lqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023.1884057971015" y="883.69565217391312"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lmy-Bc-n2W">
+            <objects>
+                <viewController storyboardIdentifier="ARViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KUw-Qd-eEo" customClass="ARViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Wd-SF-yVu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FPq-qX-qOR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adX-BF-Oon" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2875" y="1559"/>
         </scene>
         <!--Collection Tab Controller-->
         <scene sceneID="orw-0a-6lr">
@@ -820,11 +835,15 @@
             <point key="canvasLocation" x="760.86956521739137" y="138.58695652173915"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fmB-oS-YJA"/>
+        <segue reference="g6A-z4-zFC"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="leaf" width="70" height="60"/>
         <image name="male_gardener" width="550" height="400"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plantCollection" width="72" height="72"/>
         <image name="shop" width="109" height="108"/>
         <image name="shop_coffeeplant" width="221" height="281"/>

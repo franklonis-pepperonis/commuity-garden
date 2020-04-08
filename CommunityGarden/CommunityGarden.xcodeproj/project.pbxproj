@@ -22,7 +22,7 @@
 		CC339B02243BD01A00C971C7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC339B01243BD01A00C971C7 /* SignupViewController.swift */; };
 		CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */; };
 		CC67CFD823F1ED5700B6B6D5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFD723F1ED5700B6B6D5 /* art.scnassets */; };
-		CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */; };
+		CC67CFDA23F1ED5700B6B6D5 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67CFD923F1ED5700B6B6D5 /* ARViewController.swift */; };
 		CC67CFDD23F1ED5700B6B6D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFDB23F1ED5700B6B6D5 /* Main.storyboard */; };
 		CC67CFDF23F1ED5700B6B6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */; };
 		CC67CFE223F1ED5700B6B6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC67CFE023F1ED5700B6B6D5 /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 		CC67CFD223F1ED5600B6B6D5 /* CommunityGarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityGarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC67CFD723F1ED5700B6B6D5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC67CFD923F1ED5700B6B6D5 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		CC67CFDC23F1ED5700B6B6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC67CFDE23F1ED5700B6B6D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC67CFE123F1ED5700B6B6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */,
 				CC0C2DD72422D53E00392699 /* MapViewController.swift */,
 				1D5CF224242595260015671E /* PlantInfoViewController.swift */,
-				CC67CFD923F1ED5700B6B6D5 /* ViewController.swift */,
+				CC67CFD923F1ED5700B6B6D5 /* ARViewController.swift */,
 				49A20485243D13800069F8C6 /* GoogleService-Info.plist */,
 				CC67CFDB23F1ED5700B6B6D5 /* Main.storyboard */,
 				CC67CFD723F1ED5700B6B6D5 /* art.scnassets */,
@@ -269,7 +269,7 @@
 				CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */,
 				CC339AFE243BCF6C00C971C7 /* StartViewController.swift in Sources */,
 				347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */,
-				CC67CFDA23F1ED5700B6B6D5 /* ViewController.swift in Sources */,
+				CC67CFDA23F1ED5700B6B6D5 /* ARViewController.swift in Sources */,
 				497C71172426A5FA00B68B73 /* ProfileInfoViewController.swift in Sources */,
 				347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */,
 				CC67CFD623F1ED5700B6B6D5 /* AppDelegate.swift in Sources */,
