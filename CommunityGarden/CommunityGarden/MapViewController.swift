@@ -18,8 +18,9 @@ class MapViewController: UIViewController {
         
     }
     
-    var targets = [ARItem]()
+    var plants = [ARItem]()
     let locationManager = CLLocationManager()
+    var userLocation: CLLocation?
 
     
     override func viewDidLoad() {
@@ -36,12 +37,43 @@ class MapViewController: UIViewController {
 
     func setupLocations() {
         
-        let firstTarget = ARItem(itemDescription: "Garden", location: CLLocation(latitude:42.2808, longitude:-83.7430))
-        targets.append(firstTarget)
         
-        for item in targets {
+        // eventually we need to change these to gardens and each AR item should really be a dof
+        let firstPlant = ARItem(itemDescription: "Plant", location: CLLocation(latitude:42.2716, longitude:-83.7464), itemNode: nil)
+        plants.append(firstPlant)
+        
+        for item in plants {
             let annotation = MapAnnotation(location: item.location.coordinate, item: item)
             self.mapView.addAnnotation(annotation)
         }
     }
+}
+
+extension MapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+    self.userLocation = userLocation.location
+  }
+    
+  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+
+    let coordinate = view.annotation!.coordinate
+    
+    if let userCoordinate = userLocation {
+
+      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 500 {
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController
+        
+          if let mapAnnotation = view.annotation as? MapAnnotation {
+
+            viewController?.plant = mapAnnotation.item
+            
+            self.present(viewController!, animated: true, completion: nil)
+          }
+        
+      }
+    }
+  }
 }
