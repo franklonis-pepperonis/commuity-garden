@@ -98,11 +98,12 @@ class ARViewController: UIViewController {
         
             self.locationManager.startUpdatingHeading()
 
-            cameraNode.camera = SCNCamera()
-            cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
-            scene.rootNode.addChildNode(cameraNode)
+//            cameraNode.camera = SCNCamera()
+//            cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
             setupTarget()
+//            self.scene.rootNode.addChildNode(cameraNode)
             self.sceneView.scene = self.scene
+            self.sceneView.allowsCameraControl = true
         }
     
     func repositionTarget() {
@@ -162,7 +163,7 @@ class ARViewController: UIViewController {
     
     func setupTarget() {
         self.scene = SCNScene(named: "art.scnassets/ElmTree.dae")!
-        let plant = scene.rootNode.childNode(withName: "default", recursively: true)
+        let plant = self.scene.rootNode.childNode(withName: "fuckme", recursively: true) 
         plant?.position = SCNVector3(x: 0, y: 0, z: 0)
         let node = SCNNode()
         node.addChildNode(plant!)
