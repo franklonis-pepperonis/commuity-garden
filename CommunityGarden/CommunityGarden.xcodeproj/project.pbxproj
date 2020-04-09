@@ -10,6 +10,8 @@
 		1D5CF225242595260015671E /* PlantInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CF224242595260015671E /* PlantInfoViewController.swift */; };
 		347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */; };
 		347C5D8F24258B35007FFB99 /* LivePlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */; };
+		34D4A689243F8407004A1F43 /* FirebaseObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4A688243F8407004A1F43 /* FirebaseObjects.swift */; };
+		34D4A68B243F8D6B004A1F43 /* LiveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4A68A243F8D6B004A1F43 /* LiveCollectionViewController.swift */; };
 		497C71172426A5FA00B68B73 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */; };
 		49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A20485243D13800069F8C6 /* GoogleService-Info.plist */; };
 		69F00B3AED446A7E4DA73D8F /* Pods_CommunityGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */; };
@@ -34,6 +36,8 @@
 		1D5CF224242595260015671E /* PlantInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInfoViewController.swift; sourceTree = "<group>"; };
 		347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCollectionViewController.swift; sourceTree = "<group>"; };
 		347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePlantsViewController.swift; sourceTree = "<group>"; };
+		34D4A688243F8407004A1F43 /* FirebaseObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseObjects.swift; sourceTree = "<group>"; };
+		34D4A68A243F8D6B004A1F43 /* LiveCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollectionViewController.swift; sourceTree = "<group>"; };
 		497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
 		49A20485243D13800069F8C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.release.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				CC0C2DD32422D4F800392699 /* ARItem.swift */,
 				CC339AFD243BCF6C00C971C7 /* StartViewController.swift */,
 				CC339AFF243BCFFB00C971C7 /* LoginViewController.swift */,
+				34D4A688243F8407004A1F43 /* FirebaseObjects.swift */,
 				CC339B01243BD01A00C971C7 /* SignupViewController.swift */,
 				CC0C2DD52422D50C00392699 /* MapAnnotation.swift */,
 				CC67CFD523F1ED5700B6B6D5 /* AppDelegate.swift */,
@@ -116,6 +121,7 @@
 				CC67CFE323F1ED5700B6B6D5 /* Info.plist */,
 				347C5D8C24258AF2007FFB99 /* YourCollectionViewController.swift */,
 				347C5D8E24258B35007FFB99 /* LivePlantsViewController.swift */,
+				34D4A68A243F8D6B004A1F43 /* LiveCollectionViewController.swift */,
 				497C71162426A5FA00B68B73 /* ProfileInfoViewController.swift */,
 				6C7589452426A88E00AAC082 /* PlantShopViewController.swift */,
 			);
@@ -266,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC339B00243BCFFB00C971C7 /* LoginViewController.swift in Sources */,
+				34D4A689243F8407004A1F43 /* FirebaseObjects.swift in Sources */,
 				CC0C2DD42422D4F800392699 /* ARItem.swift in Sources */,
 				CC339AFE243BCF6C00C971C7 /* StartViewController.swift in Sources */,
 				347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */,
@@ -277,6 +284,7 @@
 				CC339B02243BD01A00C971C7 /* SignupViewController.swift in Sources */,
 				CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */,
 				1D5CF225242595260015671E /* PlantInfoViewController.swift in Sources */,
+				34D4A68B243F8D6B004A1F43 /* LiveCollectionViewController.swift in Sources */,
 				CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

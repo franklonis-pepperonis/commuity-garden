@@ -68,11 +68,10 @@ class LoginViewController: UIViewController{
                             completion(false)
                             return
                         }
-                    } else {
-                        completion(false)
-                        return
                     }
                 }
+                completion(false)
+                return
             }
         }
     };
