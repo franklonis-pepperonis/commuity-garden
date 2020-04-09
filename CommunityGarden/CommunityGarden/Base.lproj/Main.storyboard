@@ -560,10 +560,14 @@
         <scene sceneID="lmy-Bc-n2W">
             <objects>
                 <viewController storyboardIdentifier="ARViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KUw-Qd-eEo" customClass="ARViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Wd-SF-yVu" customClass="SCNView">
+                    <view key="view" contentMode="scaleToFill" id="0Wd-SF-yVu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kSc-1W-Qgg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co4-NF-5Up">
                                 <rect key="frame" x="20" y="370" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -585,7 +589,7 @@
                     <connections>
                         <outlet property="leftIndicator" destination="co4-NF-5Up" id="bxl-tj-5bN"/>
                         <outlet property="rightIndicator" destination="OtU-N2-JrL" id="aNL-9M-D5K"/>
-                        <outlet property="sceneView" destination="0Wd-SF-yVu" id="5Tt-l3-ieN"/>
+                        <outlet property="sceneView" destination="kSc-1W-Qgg" id="Rcw-ls-2U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adX-BF-Oon" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

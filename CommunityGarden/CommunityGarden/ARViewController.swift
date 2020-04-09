@@ -12,13 +12,10 @@ import AVFoundation
 import CoreLocation
 
 class ARViewController: UIViewController {
-    
     var scene = SCNScene()
-    
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var leftIndicator: UILabel!
     @IBOutlet weak var rightIndicator: UILabel!
-    
     
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
@@ -27,7 +24,7 @@ class ARViewController: UIViewController {
     var heading: Double = 0
     var userLocation = CLLocation()
     let cameraNode = SCNNode()
-    let targetNode = SCNNode(geometry: SCNBox(width: 8, height: 8, length: 8, chamferRadius: 0))
+    let targetNode = SCNNode(geometry: SCNBox(width: 3, height: 3, length: 3, chamferRadius: 0))
     
     //temporary just one plant for now
     var plant: ARItem!
@@ -100,12 +97,12 @@ class ARViewController: UIViewController {
             self.locationManager.delegate = self
         
             self.locationManager.startUpdatingHeading()
-                
-            sceneView.scene = scene
+
             cameraNode.camera = SCNCamera()
             cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
             scene.rootNode.addChildNode(cameraNode)
             setupTarget()
+            self.sceneView.scene = self.scene
         }
     
     func repositionTarget() {
@@ -114,15 +111,12 @@ class ARViewController: UIViewController {
       let delta = heading - self.heading
     
       if delta < -15.0 {
-        print("Turn left")
         leftIndicator.isHidden = false
         rightIndicator.isHidden = true
       } else if delta > 15 {
-        print("Turn right")
         leftIndicator.isHidden = true
         rightIndicator.isHidden = false
       } else {
-        print("It's in front of you (...hopefully)")
         leftIndicator.isHidden = true
         rightIndicator.isHidden = true
       }
@@ -133,8 +127,9 @@ class ARViewController: UIViewController {
           node.position = SCNVector3(x: Float(delta), y: 0, z: Float(-distance))
           scene.rootNode.addChildNode(node)
         } else {
+
           node.removeAllActions()
-          node.runAction(SCNAction.move(to: SCNVector3(x: Float(delta), y: 0, z: Float(-5)), duration: 0.2))
+          node.runAction(SCNAction.move(to: SCNVector3(x: Float(delta), y: 0, z: Float(-distance)), duration: 0.2))
         }
       }
     }
@@ -166,13 +161,13 @@ class ARViewController: UIViewController {
     }
     
     func setupTarget() {
-//        let scene = SCNScene(named: "art.scnassets/ElmTree.dae")
-//        let plant = scene?.rootNode.childNode(withName: "default", recursively: true)
-//        plant?.position = SCNVector3(x: 0, y: 0, z: 0)
-//        let node = SCNNode()
-//        node.addChildNode(plant!)
-        targetNode.name = "plant"
-        self.plant.itemNode = targetNode
+        self.scene = SCNScene(named: "art.scnassets/ElmTree.dae")!
+        let plant = scene.rootNode.childNode(withName: "default", recursively: true)
+        plant?.position = SCNVector3(x: 0, y: 0, z: 0)
+        let node = SCNNode()
+        node.addChildNode(plant!)
+        node.name = "enemy"
+        self.plant.itemNode = node
     }
 }
 
