@@ -51,27 +51,29 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         let db = Firestore.firestore()
 
-        db.collection("gardens").document("garden1").getDocument() { (AllPlants, err) in
+        // eventually change "garden1" to whatever garden we're in
+        db.collection("gardens").document("garden1").collection("plants").getDocuments() { (AllPlants, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                // iterate through and populate call add plant on each one
-                // for now add 6 plants to tis garden
-                var position = SCNVector3(2, -1, 2)
-                self.sceneController.addPlant(position: position, ar_image: "art.scnassets/ElmTree.dae")
-                position = SCNVector3(2, -1, 4)
-                self.sceneController.addPlant(position: position, ar_image: "art.scnassets/Bamboo.dae")
-                position = SCNVector3(3, -1, 2)
-                self.sceneController.addPlant(position: position, ar_image: "art.scnassets/Saguaro.dae")
-                position = SCNVector3(2, -1, 6)
-                self.sceneController.addPlant(position: position, ar_image: "art.scnassets/PalmTree.dae")
-                position = SCNVector3(-2, -1, 0)
-                self.sceneController.addPlant(position: position, ar_image: "art.scnassets/Bamboo.dae")
+                for plant in AllPlants!.documents {
+
+                    let ar_img = plant.data()["ar img"] as? String
+                    let plant_id = plant.data()["plant id"] as? String
+                    print("data")
+                    print(plant.data())
+                    
+                    let x = Double(plant.data()["x coord"] as! String)!
+                    let z = Double(plant.data()["z coord"] as! String)!
+                    print(x)
+                    print(z)
+                    
+                    let position = SCNVector3(x, 0, z)
+                    self.sceneController.addPlant(position: position, ar_image: ar_img!, id: plant_id!)
+                }
                 
             }
         }
-        
-
         
     }
     
@@ -105,13 +107,25 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
         if didInitializeScene {
             if (sceneView.session.currentFrame?.camera) != nil {
-                //var translation = matrix_identity_float4x4
-                //translation.columns.3.z = -1.0
-                //let transform = camera.transform * translation
-                let position = SCNVector3(2, 0, 2)
-                sceneController.addPlant(position: position, ar_image: "art.scnassets/Bamboo.dae")
+                let tapLocation = recognizer.location(in: sceneView)
+                let hitTestResults = sceneView.hitTest(tapLocation)
+                if let node = hitTestResults.first?.node, let scene = sceneController.scene, let plant = node.topmost(until: scene.rootNode) as? PlantObject {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                      
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "PlantPlotViewController") as? PlantPlotViewController
+            
+                    
+                    viewController?.plant_id = plant.plant_id
+                    self.present(viewController!, animated: true, completion: nil)
+                
+                }
+            }
+            else {
+                
             }
         }
+    
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -173,17 +187,33 @@ struct PlantScene {
         scene.rootNode.addChildNode(directionalNode)
     }
     
-    func addPlant(position: SCNVector3, ar_image: String) {
+    func addPlant(position: SCNVector3, ar_image: String, id: String) {
         
         guard let scene = self.scene else { return }
         
-        let containerNode = SCNNode()
-        
-        let nodesInFile = SCNNode.allNodes(from: ar_image)
-        nodesInFile.forEach { (node) in
-            containerNode.addChildNode(node)
-        }
-        containerNode.position = position
-        scene.rootNode.addChildNode(containerNode)
+        let plant = PlantObject(from: ar_image, id: id)
+        plant.position = position
+        scene.rootNode.addChildNode(plant)
     }
+}
+
+
+class PlantObject: SCNNode {
+    
+    var plant_id : String
+    
+    init(from file: String, id : String) {
+        self.plant_id = id
+        super.init()
+        let nodesInFile = SCNNode.allNodes(from: file)
+        nodesInFile.forEach { (node) in
+            self.addChildNode(node)
+        }
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

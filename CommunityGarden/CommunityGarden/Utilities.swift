@@ -26,4 +26,16 @@ extension SCNNode {
     } catch {}
     return nodesInFile
   }
+    
+    
+
+    func topmost(parent: SCNNode? = nil, until: SCNNode) -> SCNNode {
+        if let pNode = self.parent {
+            return pNode == until ? self : pNode.topmost(parent: pNode, until: until)
+        } else {
+            return self
+        }
+    }
 }
+
+
