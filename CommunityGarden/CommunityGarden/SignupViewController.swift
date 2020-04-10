@@ -11,9 +11,12 @@ import UIKit
 import FirebaseFirestore
 
 class SignupViewController: UIViewController{
-    @IBOutlet weak var username: UITextView!
-    @IBOutlet weak var password: UITextView!
-    @IBOutlet weak var retryPassword: UITextView!
+
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var retypedPassword: UITextField!
     
     override func viewDidLoad(){
         super.viewDidLoad();
@@ -21,7 +24,8 @@ class SignupViewController: UIViewController{
     
     @IBAction func signUp(_ sender: Any) {
         // check that username doesn't already exist
-        self.validateUsername(username: self.username.text) { (isValid) in
+        let username = self.username.text as! String
+        self.validateUsername(username: username) { (isValid) in
             if !isValid {
                 print("not valid")
                 // clear username field
@@ -33,20 +37,23 @@ class SignupViewController: UIViewController{
             } else {
                 print("valid")
                 // check that passwords match too
-                if self.password.text == self.retryPassword.text {
+                if self.password.text == self.retypedPassword.text {
                     print("password match")
                     // set cur_user for this session
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.cur_user = self.username.text
                     // add data to database
-                    self.addUser(username: self.username.text, password: self.password.text)
+                    let password = self.password.text as! String
+                    let firstName = self.firstName.text as! String
+                    let lastName = self.lastName.text as! String
+                    self.addUser(username: username, password: password, firstName: firstName, lastName: lastName)
                     // go to mapView
                     let mapView =  self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
                     self.present(mapView, animated: true, completion: nil)
                 } else {
                     // clear password fields
                     self.password.text = ""
-                    self.retryPassword.text = ""
+                    self.retypedPassword.text = ""
                     // send alert message for not matching passwords
                     print("printing alert")
                     let alert = UIAlertController(title: "Retried password doesn't match password", message: "Re-type passwords", preferredStyle: .alert)
@@ -72,16 +79,15 @@ class SignupViewController: UIViewController{
                     }
                 }
             }
+            completion(true)
+            return
         }
-        completion(true)
     };
     
-    func addUser(username: String, password: String) {
+    func addUser(username: String, password: String, firstName: String, lastName: String) {
         let db = Firestore.firestore();
-        let data = ["password": password, "collection": ["planted": [], "plants": []]] as [String: Any]
+        let data = ["first_name": firstName, "last_name": lastName, "password": password, "coins": 50, "water_available": 100] as [String: Any]
         db.collection("users").document(username).setData(data);
-        let collection = db.collection("users").document(username).collection("collection");
-        collection.document("planted");
-        collection.document("plants");
     }
+
 }

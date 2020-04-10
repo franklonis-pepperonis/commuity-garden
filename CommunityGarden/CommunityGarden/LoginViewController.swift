@@ -12,8 +12,9 @@ import Firebase
 import FirebaseFirestore
 
 class LoginViewController: UIViewController{
-    @IBOutlet weak var username: UITextView!
-    @IBOutlet weak var password: UITextView!
+    
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad(){
         super.viewDidLoad();
@@ -21,7 +22,9 @@ class LoginViewController: UIViewController{
     
     @IBAction func ValidateLogin(_ sender: UIButton) {
         // Check if valid username and password
-        self.validateUser(username: self.username.text, password: self.password.text) { (isValid) in
+        let username = self.username.text as! String
+        let password = self.password.text as! String
+        self.validateUser(username: username, password: password) { (isValid) in
             if isValid {
                 // set cur_user efor this session
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate

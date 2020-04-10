@@ -37,21 +37,21 @@ class LiveCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let userId = delegate.cur_user!
-        let db = Firestore.firestore()
-        db.collection("users").document(userId).getDocument() { (document, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                let data = document!.data()
-                let collection = data!["collection"] as! Array<Any>
-                return collection.size()
-            }
-        }
-        return 0
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        let userId = delegate.cur_user!
+//        let db = Firestore.firestore()
+//        db.collection("users").document(userId).getDocument() { (document, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                let data = document!.data()
+//                let collection = data!["collection"] as! Array<Any>
+//                return collection.size()
+//            }
+//        }
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
