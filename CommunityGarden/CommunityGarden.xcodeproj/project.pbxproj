@@ -16,6 +16,8 @@
 		49A20486243D13800069F8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A20485243D13800069F8C6 /* GoogleService-Info.plist */; };
 		69F00B3AED446A7E4DA73D8F /* Pods_CommunityGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BD4DFEE8402F2354C6D5DC /* Pods_CommunityGarden.framework */; };
 		6C7589462426A88E00AAC082 /* PlantShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7589452426A88E00AAC082 /* PlantShopViewController.swift */; };
+		7D7797F02441323A00BA8602 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7797EE2441323900BA8602 /* MyCollectionViewCell.swift */; };
+		7D7797F12441323A00BA8602 /* LiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7797EF2441323A00BA8602 /* LiveCollectionViewCell.swift */; };
 		CC0C2DD42422D4F800392699 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD32422D4F800392699 /* Items.swift */; };
 		CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD52422D50C00392699 /* MapAnnotation.swift */; };
 		CC0C2DD82422D53E00392699 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2DD72422D53E00392699 /* MapViewController.swift */; };
@@ -43,6 +45,8 @@
 		59D2F014BF28B7F1EFEFF09D /* Pods-CommunityGarden.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.release.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.release.xcconfig"; sourceTree = "<group>"; };
 		5E13D1A87B934AE51ACC3309 /* Pods-CommunityGarden.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityGarden.debug.xcconfig"; path = "Target Support Files/Pods-CommunityGarden/Pods-CommunityGarden.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7589452426A88E00AAC082 /* PlantShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantShopViewController.swift; sourceTree = "<group>"; };
+		7D7797EE2441323900BA8602 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D7797EF2441323A00BA8602 /* LiveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC0C2DD32422D4F800392699 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		CC0C2DD52422D50C00392699 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		CC0C2DD72422D53E00392699 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		CC67CFD423F1ED5600B6B6D5 /* CommunityGarden */ = {
 			isa = PBXGroup;
 			children = (
+				7D7797EF2441323A00BA8602 /* LiveCollectionViewCell.swift */,
+				7D7797EE2441323900BA8602 /* MyCollectionViewCell.swift */,
 				CC0C2DD32422D4F800392699 /* Items.swift */,
 				CC339AFD243BCF6C00C971C7 /* StartViewController.swift */,
 				CC339AFF243BCFFB00C971C7 /* LoginViewController.swift */,
@@ -273,6 +279,7 @@
 			files = (
 				CC339B00243BCFFB00C971C7 /* LoginViewController.swift in Sources */,
 				CC0C2DD42422D4F800392699 /* Items.swift in Sources */,
+				7D7797F02441323A00BA8602 /* MyCollectionViewCell.swift in Sources */,
 				CC339AFE243BCF6C00C971C7 /* StartViewController.swift in Sources */,
 				4913E435243FA472003DF758 /* Utilities.swift in Sources */,
 				347C5D8D24258AF2007FFB99 /* YourCollectionViewController.swift in Sources */,
@@ -286,6 +293,7 @@
 				4913E433243F9374003DF758 /* PlantPlotViewController.swift in Sources */,
 				1D5CF225242595260015671E /* PlantInfoViewController.swift in Sources */,
 				CC0C2DD62422D50C00392699 /* MapAnnotation.swift in Sources */,
+				7D7797F12441323A00BA8602 /* LiveCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
