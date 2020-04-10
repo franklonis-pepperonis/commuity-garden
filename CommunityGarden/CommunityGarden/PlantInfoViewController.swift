@@ -32,12 +32,12 @@ class PlantInfoViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 let data = document!.data()
-                print("\(data!["Description"])")
-                self.PlantDescription.text = "\(data!["Description"])"
+                let description = data!["Description"] as! String
+                self.PlantDescription.text = description
             }
         }
 
-    
+
     }
     
 
