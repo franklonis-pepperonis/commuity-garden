@@ -10,79 +10,87 @@ import UIKit
 import SceneKit
 import AVFoundation
 import CoreLocation
+import ARKit
+import Firebase
+import FirebaseFirestore
 
-class ARViewController: UIViewController {
+
+class ARViewController: UIViewController, ARSCNViewDelegate {
+
+    @IBOutlet var sceneView: ARSCNView!
+    var sceneController = PlantScene()
     
-    @IBOutlet weak var sceneView: SCNView!
-    @IBOutlet weak var leftIndicator: UILabel!
-    @IBOutlet weak var rightIndicator: UILabel!
-    var cameraSession: AVCaptureSession?
-    var cameraLayer: AVCaptureVideoPreviewLayer?
+
+    var didInitializeScene: Bool = false
     
-    var locationManager = CLLocationManager()
-    var heading: Double = 0
-    var userLocation = CLLocation()
-    let scene = SCNScene()
-    let cameraNode = SCNNode()
-    let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
-    
-    //temporary just one plant for now
-    var plant: ARItem!
-    
-    func createCaptureSession() -> (session: AVCaptureSession?, error: NSError?) {
-      var error: NSError?
-      var captureSession: AVCaptureSession?
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-      let backVideoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
+        // Set the view's delegate
+        sceneView.delegate = self
         
-      if backVideoDevice != nil {
-        var videoInput: AVCaptureDeviceInput!
-        do {
-          videoInput = try AVCaptureDeviceInput(device: backVideoDevice!)
-        } catch let error1 as NSError {
-          error = error1
-          videoInput = nil
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = true
+        
+        // Create a new scene
+        if let scene = sceneController.scene {
+            // Set the scene to the view
+            sceneView.scene = scene
         }
-          
-
-        if error == nil {
-          captureSession = AVCaptureSession()
-
-          if captureSession!.canAddInput(videoInput) {
-            captureSession!.addInput(videoInput)
-          } else {
-            error = NSError(domain: "", code: 0, userInfo: ["description": "Error adding video input."])
-          }
-        } else {
-          error = NSError(domain: "", code: 1, userInfo: ["description": "Error creating capture device input."])
-        }
-      } else {
-        error = NSError(domain: "", code: 2, userInfo: ["description": "Back video device not found."])
-      }
         
-      return (session: captureSession, error: error)
+        renderGarden()
+    
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ARViewController.didTapScreen))
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func renderGarden(){
+        
+        // query database for list of plants, and XY coordinates
+        
+        
+        let db = Firestore.firestore()
+
+        // eventually change "garden1" to whatever garden we're in
+        db.collection("gardens").document("garden1").collection("plants").getDocuments() { (AllPlants, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for plant in AllPlants!.documents {
+
+                    let ar_img = plant.data()["ar img"] as? String
+                    let plant_id = plant.data()["plant id"] as? String
+                    print("data")
+                    print(plant.data())
+                    
+                    let x = Double(plant.data()["x coord"] as! String)!
+                    let z = Double(plant.data()["z coord"] as! String)!
+                    print(x)
+                    print(z)
+                    
+                    let position = SCNVector3(x, 0, z)
+                    self.sceneController.addPlant(position: position, ar_image: ar_img!, id: plant_id!)
+                }
+                
+            }
+        }
+        
     }
     
     
-    func loadCamera() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-      let captureSessionResult = createCaptureSession()
-       
-      guard captureSessionResult.error == nil, let session = captureSessionResult.session else {
-        print("Error creating capture session.")
-        return
-      }
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
 
-      self.cameraSession = session
-        
-      let cameraLayer = AVCaptureVideoPreviewLayer(session: self.cameraSession!)
-        cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        cameraLayer.frame = self.view.bounds
-
-        self.view.layer.insertSublayer(cameraLayer, at: 0)
-        self.cameraLayer = cameraLayer
-      }
+        // Run the view's session
+        sceneView.session.run(configuration)
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,9 +102,119 @@ class ARViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Release any cached data, images, etc that aren't in use.
+    }
+
+    @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
+        if didInitializeScene {
+            if (sceneView.session.currentFrame?.camera) != nil {
+                let tapLocation = recognizer.location(in: sceneView)
+                let hitTestResults = sceneView.hitTest(tapLocation)
+                if let node = hitTestResults.first?.node, let scene = sceneController.scene, let plant = node.topmost(until: scene.rootNode) as? PlantObject {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                      
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "PlantPlotViewController") as? PlantPlotViewController
+            
+                    
+                    viewController?.plant_id = plant.plant_id
+                    self.present(viewController!, animated: true, completion: nil)
+                
+                }
+            }
+            else {
+                
+            }
+        }
+    
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if !didInitializeScene {
+            if sceneView.session.currentFrame?.camera != nil {
+                didInitializeScene = true
+            }
+       }
+    }
     
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        // Present an error message to the user
+        
+    }
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+        // Inform the user that the session has been interrupted, for example, by presenting an overlay
+        
+    }
+    
+    func sessionInterruptionEnded(_ session: ARSession) {
+        // Reset tracking and/or remove existing anchors if consistent tracking is required
+        
+    }
 }
 
+
+struct PlantScene {
+    
+    var scene: SCNScene?
+    
+    init() {
+        scene = self.initializeScene()
+    }
+    
+    func initializeScene() -> SCNScene? {
+        let scene = SCNScene()
+        
+        setDefaults(scene: scene)
+        
+        return scene
+    }
+    
+    func setDefaults(scene: SCNScene) {
+        
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light?.type = SCNLight.LightType.ambient
+        ambientLightNode.light?.color = UIColor(white: 0.8, alpha: 1.0)
+        scene.rootNode.addChildNode(ambientLightNode)
+        
+        // Create a directional light with an angle to provide a more interesting look
+        let directionalLight = SCNLight()
+        directionalLight.type = .directional
+        directionalLight.color = UIColor(white: 0.8, alpha: 1.0)
+        let directionalNode = SCNNode()
+        directionalNode.eulerAngles = SCNVector3Make(GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        directionalNode.light = directionalLight
+        scene.rootNode.addChildNode(directionalNode)
+    }
+    
+    func addPlant(position: SCNVector3, ar_image: String, id: String) {
+        
+        guard let scene = self.scene else { return }
+        
+        let plant = PlantObject(from: ar_image, id: id)
+        plant.position = position
+        scene.rootNode.addChildNode(plant)
+    }
+}
+
+
+class PlantObject: SCNNode {
+    
+    var plant_id : String
+    
+    init(from file: String, id : String) {
+        self.plant_id = id
+        super.init()
+        let nodesInFile = SCNNode.allNodes(from: file)
+        nodesInFile.forEach { (node) in
+            self.addChildNode(node)
+        }
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}

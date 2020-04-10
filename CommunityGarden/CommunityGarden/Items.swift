@@ -13,6 +13,20 @@ import SceneKit
 
 struct ARItem {
     let itemDescription: String
+    // change this to be coordinates?
     let location: CLLocation
     var itemNode: SCNNode?
+}
+
+
+struct Garden {
+    let garden_id: String
+    let location: CLLocation
+}
+
+struct PlantInfo {
+    var description: String
+    var ar_image: String
+    var cost: Int
+    var image: String
 }
