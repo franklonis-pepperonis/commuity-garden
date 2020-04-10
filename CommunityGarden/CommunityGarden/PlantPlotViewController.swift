@@ -11,6 +11,8 @@ import UIKit
 import SceneKit
 import AVFoundation
 import CoreLocation
+import Firebase
+import FirebaseFirestore
 
 class PlantPlotViewController: UIViewController
 {
@@ -18,7 +20,15 @@ class PlantPlotViewController: UIViewController
     var scene = SCNScene()
     
     @IBOutlet weak var sceneView: SCNView!
-  
+    
+    @IBOutlet weak var PlantName: UILabel!
+    @IBOutlet weak var PlantOwner: UILabel!
+    @IBOutlet weak var PlantHealth: UILabel!
+    
+    @IBOutlet weak var WaterButton: UIButton!
+    @IBOutlet weak var ShovelButton: UIButton!
+    
+    
     // should eventually hold plant info to display
     var plant_id : String?
     
@@ -26,8 +36,23 @@ class PlantPlotViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let db = Firestore.firestore()
+    
+        // eventually change "garden1" to whatever garden we're in
+        db.collection("plant IDs").document(plant_id!).getDocument() { (Plant, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.PlantName.text = Plant!.data()!["name"] as? String
+                self.PlantOwner.text = Plant!.data()!["owner"] as? String
+                self.PlantHealth.text = Plant!.data()!["health"] as? String
+            }
+        }
+        
+        
+        
         // change to image pulled from database from plant.image
-        let scene = SCNScene(named: "art.scnassets/ElmTree.dae")
+        let scene = SCNScene(named: "art.scnassets/\(String(describing: self.PlantName.text)).dae")
         
         // Add camera node
         let cameraNode = SCNNode()
