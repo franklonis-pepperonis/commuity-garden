@@ -13,12 +13,12 @@ class MapAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let title: String?
     
-    let item: ARItem
+    let item: Garden
     
-    init(location: CLLocationCoordinate2D, item: ARItem) {
+    init(location: CLLocationCoordinate2D, item: Garden) {
         self.coordinate = location
         self.item = item
-        self.title = item.itemDescription
+        self.title = item.garden_id
         
         super.init()
     }

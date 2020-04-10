@@ -18,7 +18,7 @@ class MapViewController: UIViewController {
         
     }
     
-    var plants = [ARItem]()
+    var gardens = [Garden]()
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
 
@@ -26,6 +26,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // make sure user tracking mode is on, request authorization if not.
+        // extension at bottom of file will update user location whenever user refreshes location
         mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         
         if CLLocationManager.authorizationStatus() == .notDetermined {
@@ -38,13 +41,14 @@ class MapViewController: UIViewController {
     func setupLocations() {
         
         
-        // eventually we need to change these to gardens and each AR item should really be a dof
-        let firstPlant = ARItem(itemDescription: "Plant", location: CLLocation(latitude:42.2716, longitude:-83.7464), itemNode: nil)
-        let secondPlant = ARItem(itemDescription: "Plant 2", location: CLLocation(latitude: 42.271740, longitude: -83.740227), itemNode: nil)
-        plants.append(firstPlant)
-        plants.append(secondPlant)
+        // eventually this should be a pull from the database to load the garden ids and the locations as opposed to it being hardcoded
         
-        for item in plants {
+        let firstGarden = Garden(garden_id: "Garden1", location: CLLocation(latitude:42.272085, longitude:-83.744690))
+        let secondGarden = Garden(garden_id: "Garden2", location: CLLocation(latitude: 42.271740, longitude: -83.740227))
+        gardens.append(firstGarden)
+        gardens.append(secondGarden)
+        
+        for item in gardens {
             let annotation = MapAnnotation(location: item.location.coordinate, item: item)
             self.mapView.addAnnotation(annotation)
         }
@@ -52,10 +56,14 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
-  func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-    self.userLocation = userLocation.location
-  }
+    
+    
+    // whwnever user location updates, update userlocation
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        self.userLocation = userLocation.location
+    }
 
+    // make map annotations that arent user location display a garden
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
@@ -67,26 +75,29 @@ extension MapViewController: MKMapViewDelegate {
             return annotationView
         }
     }
-  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-
-    let coordinate = view.annotation!.coordinate
     
-    if let userCoordinate = userLocation {
+    // if they select a garden, check to make sure the distance between the user and the garden is < 500 meters
+    // instantiate a viewController for AR view controller and pass in garden object
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
 
-      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 500 {
+        let coordinate = view.annotation!.coordinate
+    
+        if let userCoordinate = userLocation {
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 500 {
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
           
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController
+                let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController
         
-          if let mapAnnotation = view.annotation as? MapAnnotation {
+                if let mapAnnotation = view.annotation as? MapAnnotation {
 
-            viewController?.plant = mapAnnotation.item
-            viewController?.userLocation = mapView.userLocation.location!
-            self.present(viewController!, animated: true, completion: nil)
-          }
+                    //viewController?.garden = mapAnnotation.item
+                    //viewController?.userLocation = mapView.userLocation.location!
+                    self.present(viewController!, animated: true, completion: nil)
+                }
         
-      }
+            }
+        }
     }
-  }
 }
