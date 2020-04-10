@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Sg-yR-17e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Sg-yR-17e">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -333,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="-547.82608695652175" y="138.58695652173915"/>
         </scene>
-        <!--Living Plants-->
+        <!--Live Plants View Controller-->
         <scene sceneID="f1T-xf-wxK">
             <objects>
-                <viewController id="V00-yf-nY6" customClass="LivePlantsViewController" sceneMemberID="viewController">
+                <viewController id="V00-yf-nY6" customClass="LivePlantsViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8an-ch-tlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +376,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Pb-ZI-CdX" customClass="LiveCollectionViewController" customModule="CommunityGarden" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Pb-ZI-CdX">
                                 <rect key="frame" x="0.0" y="131" width="414" height="536"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -387,25 +387,41 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveCell" id="j6o-5w-43X">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveCell" id="j6o-5w-43X" customClass="LiveCollectionViewCell" customModule="CommunityGarden" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="s2L-30-wj8">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FP-i5-bCV">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="liveLabel" destination="3FP-i5-bCV" id="Hxq-vE-QMq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="V00-yf-nY6" id="r9W-7f-d7C"/>
+                                    <outlet property="delegate" destination="V00-yf-nY6" id="erL-gE-0jB"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96539884809999998" blue="0.91917043919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Jpg-v4-0lf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Living Plants" id="Iqw-5T-iQk"/>
+                    <navigationItem key="navigationItem" id="Krw-U6-1WF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbr-FZ-lDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023.1884057971015" y="1542.3913043478262"/>
+            <point key="canvasLocation" x="-115.94202898550725" y="1542.3913043478262"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kcP-Wq-vnE">
@@ -508,47 +524,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGI-OT-ahQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-78.260869565217391" y="1592.1195652173915"/>
+            <point key="canvasLocation" x="828.98550724637687" y="1592.1195652173915"/>
         </scene>
-        <!--Your Collection-->
+        <!--Your Collection View Controller-->
         <scene sceneID="9dj-Vl-UVM">
             <objects>
-                <viewController id="WI9-Cn-7l7" customClass="YourCollectionViewController" sceneMemberID="viewController">
+                <viewController id="WI9-Cn-7l7" customClass="YourCollectionViewController" customModule="CommunityGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5e-pb-Eav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mQ-jl-AW6">
-                                <rect key="frame" x="294" y="150" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZH-ki-BcB">
-                                <rect key="frame" x="65" y="267" width="10" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-Oy-I0Q">
-                                <rect key="frame" x="202" y="267" width="8" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-DM-tAV">
-                                <rect key="frame" x="156" y="150" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="shop_trianglepalm"/>
-                                <connections>
-                                    <segue destination="bXZ-fM-jI6" kind="presentation" id="e6z-HJ-H1g"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d34-da-y6m">
-                                <rect key="frame" x="20" y="150" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="shop_coffeeplant"/>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFH-Bf-f3V" userLabel="Leaf Water Banner">
                                 <rect key="frame" x="2" y="30" width="408" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -584,15 +569,52 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OCl-2s-bSV">
+                                <rect key="frame" x="0.0" y="143" width="414" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xSj-1z-yTh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColCell" id="tSQ-hp-IfT" customClass="MyCollectionViewCell" customModule="CommunityGarden" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qQS-ig-5Uk">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zor-IQ-yAy">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="myLabel" destination="Zor-IQ-yAy" id="QM0-e8-YaL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="WI9-Cn-7l7" id="hQA-X3-NfV"/>
+                                    <outlet property="delegate" destination="WI9-Cn-7l7" id="kbk-OD-WAf"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96546715500000002" blue="0.91507387159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="pkF-B3-qJP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Your Collection" id="WfU-oK-0lb" userLabel="Your Plants"/>
+                    <navigationItem key="navigationItem" id="MZ8-QO-Fle"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBy-9B-lqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023.1884057971015" y="883.69565217391312"/>
+            <point key="canvasLocation" x="-115.94202898550725" y="883.69565217391312"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lmy-Bc-n2W">
@@ -619,8 +641,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WI9-Cn-7l7" kind="relationship" relationship="viewControllers" id="mWf-vE-cUw"/>
-                        <segue destination="V00-yf-nY6" kind="relationship" relationship="viewControllers" id="KwP-Ru-9J1"/>
+                        <segue destination="0Zf-Ga-SKj" kind="relationship" relationship="viewControllers" id="mWf-vE-cUw"/>
+                        <segue destination="fvj-3c-EHN" kind="relationship" relationship="viewControllers" id="KwP-Ru-9J1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59s-mM-0lE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -707,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0S-3L-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227.536231884058" y="901.63043478260875"/>
+            <point key="canvasLocation" x="2042.0289855072465" y="901.63043478260875"/>
         </scene>
         <!--Profile Info View Controller-->
         <scene sceneID="K4Q-VH-kWr">
@@ -858,6 +880,44 @@
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="138.58695652173915"/>
         </scene>
+        <!--Your Collection-->
+        <scene sceneID="y9y-mY-jbo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Zf-Ga-SKj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Your Collection" id="WfU-oK-0lb" userLabel="Your Plants"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Ah-kC-seV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WI9-Cn-7l7" kind="relationship" relationship="rootViewController" id="qoq-JL-dCn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNo-He-SvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023.1884057971015" y="883.69565217391312"/>
+        </scene>
+        <!--Living Plants-->
+        <scene sceneID="JJW-Qw-F6b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvj-3c-EHN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Living Plants" id="Iqw-5T-iQk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FgM-DS-dUi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V00-yf-nY6" kind="relationship" relationship="rootViewController" id="w53-bc-dFB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QY9-W7-AU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023.1884057971015" y="1542.3913043478262"/>
+        </scene>
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="64" height="60"/>
@@ -874,6 +934,6 @@
         <image name="wateringcan_icon" width="108" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e6z-HJ-H1g"/>
+        <segue reference="Mw7-KF-OhH"/>
     </inferredMetricsTieBreakers>
 </document>
