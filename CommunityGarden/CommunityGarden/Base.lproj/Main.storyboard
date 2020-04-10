@@ -770,13 +770,6 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-U4-Nhk">
-                                <rect key="frame" x="70" y="630" width="274" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96553522349999998" blue="0.91097623110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hbM-qc-S8d"/>
@@ -784,9 +777,8 @@
                     <navigationItem key="navigationItem" id="Tzi-1q-99e"/>
                     <connections>
                         <outlet property="coins" destination="46u-Rp-exK" id="TZr-7J-jBc"/>
-                        <outlet property="collection" destination="fU3-1N-dj2" id="Ja3-tC-1BO"/>
+                        <outlet property="collection" destination="fU3-1N-dj2" id="SVx-DH-CMa"/>
                         <outlet property="fullName" destination="fXM-Ya-5hy" id="4mY-eT-Afy"/>
-                        <outlet property="planted" destination="GNm-U4-Nhk" id="tzf-IA-Ei1"/>
                         <outlet property="username" destination="tJM-4J-knV" id="6RX-a9-Ufr"/>
                         <outlet property="water" destination="s3d-2M-yJk" id="hnz-eb-Cr8"/>
                     </connections>

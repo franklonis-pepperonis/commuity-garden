@@ -15,7 +15,6 @@ class ProfileInfoViewController: UIViewController{
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var collection: UILabel!
-    @IBOutlet weak var planted: UILabel!
     @IBOutlet weak var coins: UILabel!
     @IBOutlet weak var water: UILabel!
     
