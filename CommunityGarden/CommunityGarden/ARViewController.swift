@@ -60,13 +60,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
                     let ar_img = plant.data()["ar img"] as? String
                     let plant_id = plant.data()["plant id"] as? String
-                    print("data")
-                    print(plant.data())
                     
                     let x = Double(plant.data()["x coord"] as! String)!
                     let z = Double(plant.data()["z coord"] as! String)!
-                    print(x)
-                    print(z)
                     
                     let position = SCNVector3(x, 0, z)
                     self.sceneController.addPlant(position: position, ar_image: ar_img!, id: plant_id!)
