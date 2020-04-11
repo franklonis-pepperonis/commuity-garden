@@ -250,7 +250,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-Lb-eZo">
                                 <rect key="frame" x="320" y="599" width="74" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="shop"/>
+                                <state key="normal" image="shop_icon"/>
                                 <connections>
                                     <segue destination="uFB-LQ-4MA" kind="presentation" id="NzO-UE-Llg"/>
                                 </connections>
@@ -464,7 +464,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20B-vM-g6K">
                                 <rect key="frame" x="59" y="616" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="water-can"/>
+                                <state key="normal" title="Button" image="wateringcan_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QV-nN-ioF">
                                 <rect key="frame" x="268" y="614" width="69" height="70"/>
@@ -635,7 +635,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_trianglepalm" translatesAutoresizingMaskIntoConstraints="NO" id="wEV-uw-S83">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_bamboo" translatesAutoresizingMaskIntoConstraints="NO" id="wEV-uw-S83">
                                 <rect key="frame" x="43" y="158" width="166" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -643,7 +643,7 @@
                                 <rect key="frame" x="43" y="326" width="63" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_coffeeplant" translatesAutoresizingMaskIntoConstraints="NO" id="Ki3-rN-Qth">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_desertmarigold" translatesAutoresizingMaskIntoConstraints="NO" id="Ki3-rN-Qth">
                                 <rect key="frame" x="217" y="158" width="166" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -903,11 +903,12 @@
         <image name="male_gardener" width="550" height="400"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plantCollection" width="72" height="72"/>
-        <image name="shop" width="109" height="108"/>
-        <image name="shop_coffeeplant" width="221" height="281"/>
-        <image name="shop_trianglepalm" width="166" height="211"/>
+        <image name="shop_bamboo" width="656" height="939"/>
+        <image name="shop_desertmarigold" width="320" height="456"/>
+        <image name="shop_icon" width="111" height="110"/>
         <image name="shovel_icon" width="108" height="108"/>
         <image name="trianglepalm" width="416" height="520"/>
         <image name="water-can" width="512" height="512"/>
+        <image name="wateringcan_icon" width="293" height="292"/>
     </resources>
 </document>
