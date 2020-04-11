@@ -242,7 +242,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-ps-zBP">
                                 <rect key="frame" x="47" y="599" width="70" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plantCollection"/>
+                                <state key="normal" image="collection_icon"/>
                                 <connections>
                                     <segue destination="qLT-kA-zIZ" kind="presentation" id="NPS-km-j2e"/>
                                 </connections>
@@ -899,10 +899,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="collection_icon" width="404" height="403"/>
         <image name="leaf" width="70" height="60"/>
         <image name="male_gardener" width="550" height="400"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="plantCollection" width="72" height="72"/>
         <image name="shop_bamboo" width="656" height="939"/>
         <image name="shop_desertmarigold" width="320" height="456"/>
         <image name="shop_icon" width="111" height="110"/>
