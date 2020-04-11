@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
+import FirebaseFirestore
 
 class MapViewController: UIViewController {
     
@@ -18,7 +20,6 @@ class MapViewController: UIViewController {
         
     }
     
-    var gardens = [Garden]()
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
 
@@ -40,17 +41,25 @@ class MapViewController: UIViewController {
 
     func setupLocations() {
         
-        
         // eventually this should be a pull from the database to load the garden ids and the locations as opposed to it being hardcoded
-        
-        let firstGarden = Garden(garden_id: "Garden1", location: CLLocation(latitude:42.272085, longitude:-83.744690))
-        let secondGarden = Garden(garden_id: "Garden2", location: CLLocation(latitude: 42.271740, longitude: -83.740227))
-        gardens.append(firstGarden)
-        gardens.append(secondGarden)
-        
-        for item in gardens {
-            let annotation = MapAnnotation(location: item.location.coordinate, item: item)
-            self.mapView.addAnnotation(annotation)
+        let db = Firestore.firestore()
+        db.collection("gardens").getDocuments() { (allGardens, err) in
+            if let err = err {
+                print("Error getting gardens: \(err)")
+            } else {
+                var gardens = [Garden]()
+                for garden in allGardens!.documents {
+                    // check for valid username
+                    let latGarden = garden.data()["latitude"] as! Double
+                    let longGarden = garden.data()["longitude"] as! Double
+                    let tempGarden = Garden(garden_id: garden.documentID, location: CLLocation(latitude: latGarden, longitude: longGarden))
+                    gardens.append(tempGarden)
+                }
+                for item in gardens {
+                    let annotation = MapAnnotation(location: item.location.coordinate, item: item)
+                    self.mapView.addAnnotation(annotation)
+                }
+            }
         }
     }
 }
