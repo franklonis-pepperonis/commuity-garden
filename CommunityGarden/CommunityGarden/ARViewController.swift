@@ -57,7 +57,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 print("Error getting documents: \(err)")
             } else {
                 for plant in AllPlants!.documents {
-
                     let ar_img = plant.data()["ar img"] as? String
                     let plant_id = plant.data()["plant id"] as? String
                     

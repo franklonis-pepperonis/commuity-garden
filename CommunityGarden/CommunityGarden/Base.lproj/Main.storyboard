@@ -465,6 +465,9 @@
                                 <rect key="frame" x="59" y="616" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="wateringcan_icon"/>
+                                <connections>
+                                    <action selector="waterButtonWithButton:" destination="DuI-OH-g6e" eventType="touchUpInside" id="8HI-TB-woi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QV-nN-ioF">
                                 <rect key="frame" x="268" y="614" width="69" height="70"/>
@@ -486,8 +489,6 @@
                         <outlet property="PlantHealth" destination="EFO-4U-pWu" id="Xay-pi-yhO"/>
                         <outlet property="PlantName" destination="rXc-db-z1F" id="rt9-p2-DPw"/>
                         <outlet property="PlantOwner" destination="akQ-0d-98c" id="tpR-jL-vJe"/>
-                        <outlet property="ShovelButton" destination="1QV-nN-ioF" id="ga5-51-oKM"/>
-                        <outlet property="WaterButton" destination="20B-vM-g6K" id="puu-NS-FCq"/>
                         <outlet property="sceneView" destination="Qkj-RB-Nsn" id="a6B-h0-PHo"/>
                     </connections>
                 </viewController>

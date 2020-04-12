@@ -41,7 +41,6 @@ class MapViewController: UIViewController {
 
     func setupLocations() {
         
-        // eventually this should be a pull from the database to load the garden ids and the locations as opposed to it being hardcoded
         let db = Firestore.firestore()
         db.collection("gardens").getDocuments() { (allGardens, err) in
             if let err = err {
@@ -49,7 +48,6 @@ class MapViewController: UIViewController {
             } else {
                 var gardens = [Garden]()
                 for garden in allGardens!.documents {
-                    // check for valid username
                     let latGarden = garden.data()["latitude"] as! Double
                     let longGarden = garden.data()["longitude"] as! Double
                     let tempGarden = Garden(garden_id: garden.documentID, location: CLLocation(latitude: latGarden, longitude: longGarden))
