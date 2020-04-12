@@ -103,11 +103,15 @@ class PlantPlotViewController: UIViewController
     {
         //need user, plant user, plant id, plant health
         let db = Firestore.firestore();
-        //update health of plant
+        //update health of plant, if its not 100 already
+        if Int(self.PlantHealth.text!)! >= 100 {
+            return
+        }
         let newHealth = String(Int(self.PlantHealth.text!)! + 10);
         db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
         //update user water and coins
         //query plant id DB
+        
         db.collection("plant IDs").getDocuments() { (allPlants, err) in
             if let err = err {
                 print("Error getting plants: \(err)")
