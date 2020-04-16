@@ -22,6 +22,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
 
     var didInitializeScene: Bool = false
+    var gardenID: String?
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +54,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let db = Firestore.firestore()
 
         // eventually change "garden1" to whatever garden we're in
-        db.collection("gardens").document("garden1").collection("plants").getDocuments() { (AllPlants, err) in
+
+        db.collection("gardens").document(self.gardenID!).collection("plants").getDocuments() { (AllPlants, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for plant in AllPlants!.documents {
-
                     let ar_img = plant.data()["ar img"] as? String
                     let plant_id = plant.data()["plant id"] as? String
                     
@@ -110,8 +112,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                       
                     let viewController = storyboard.instantiateViewController(withIdentifier: "PlantPlotViewController") as? PlantPlotViewController
-            
                     
+                    viewController?.garden_id = self.gardenID
                     viewController?.plant_id = plant.plant_id
                     self.present(viewController!, animated: true, completion: nil)
                 
