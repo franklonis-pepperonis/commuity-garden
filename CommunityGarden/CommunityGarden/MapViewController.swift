@@ -99,6 +99,7 @@ extension MapViewController: MKMapViewDelegate {
         
                 if let mapAnnotation = view.annotation as? MapAnnotation {
 
+                    viewController?.gardenID = mapAnnotation.item.garden_id
                     //viewController?.garden = mapAnnotation.item
                     //viewController?.userLocation = mapView.userLocation.location!
                     self.present(viewController!, animated: true, completion: nil)

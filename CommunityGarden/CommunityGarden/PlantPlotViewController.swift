@@ -32,6 +32,7 @@ class PlantPlotViewController: UIViewController
     // should eventually hold plant info to display
     var plant_id : String?
     var plant_ar : String?
+    var garden_id : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +121,7 @@ class PlantPlotViewController: UIViewController
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 let userId = delegate.cur_user!
                 for plant in allPlants!.documents {
-                    if plant.documentID as! String == self.plant_id! {
+                    if plant.documentID as String == self.plant_id! {
                         //find owner of plant
                         let owner = plant.data()["owner"] as! String
                         if owner == userId {
@@ -132,7 +133,7 @@ class PlantPlotViewController: UIViewController
                                 print("Error updating user leaves: \(err)")
                             } else {
                                 for user in users!.documents {
-                                    if user.documentID as! String == owner {
+                                    if user.documentID as String == owner {
                                         //add 10 coins to owner of plants coins
                                         var userCoins = user.data()["coins"] as! Int
                                         userCoins += 10
@@ -155,10 +156,9 @@ class PlantPlotViewController: UIViewController
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 let userId = delegate.cur_user!
                 for user in users!.documents {
-                    if user.documentID as! String == userId {
+                    if user.documentID as String == userId {
                         //add 10 coins to owner of plants coins
                         var userCoins = user.data()["coins"] as! Int
-                        userCoins -= 10
                         //update plant onwer coins in the database
                         db.collection("users").document(userId).setData(["coins": userCoins], merge: true)
                         var userWater = user.data()["water_available"] as! Int
