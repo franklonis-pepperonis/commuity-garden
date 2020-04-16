@@ -24,9 +24,9 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
     let imageSize = CGSize(width: 160.0, height: 160.0)
     
     struct PlantInfo{
-        var amt: Int
-        var img: String?
-        var name: String
+        var amt: Int // amt user has in plant collection
+        var img: String? // name of image
+        var name: String // name of plant
     }
     
     
@@ -95,14 +95,14 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         let plantName = self.keys[indexPath.item]
         let plantInfo = self.plant2Info[plantName]
         
-        let image = UIImage(named: "shop_cactus")// plantInfo?.img ?? "") ?? nil
+        let image = UIImage(named: plantInfo?.img ?? "") ?? nil
         if(image != nil){
             let height = (cell.myButton.frame.size.height - imageSize.height) / 2
             let width = (cell.myButton.frame.size.width - imageSize.width) / 2
-            cell.myButton.setImage(UIImage(named: "shop_cactus"), for: UIControl.State.normal)
+            cell.myButton.setImage(image, for: UIControl.State.normal)
             cell.myButton.frame = CGRect(x: 0, y: 0, width: self.imageSize.width * 0.85, height: self.imageSize.width * 0.85)
         }else{
-            cell.myButton.setTitle("fuck", for: UIControl.State.normal)
+            cell.myButton.setTitle("image error", for: UIControl.State.normal)
         }
         let amt = plantInfo?.amt ?? 0
         cell.amount.text = String(amt)
