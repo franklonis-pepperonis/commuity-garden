@@ -25,8 +25,8 @@ struct Garden {
 }
 
 struct PlantInfo {
-    var description: String
-    var ar_image: String
-    var cost: Int
-    var image: String
+   var amt: Int // amt user has in plant collection
+    var img: String? // name of image
+    var name: String // name of plant
+    var description: String? // description for plant info view
 }

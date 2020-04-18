@@ -379,30 +379,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FVD-zJ-7Xe">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="307" height="298"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveCell" id="uMF-hn-9WD" customClass="LiveCollectionViewCell" customModule="CommunityGarden" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="53.666666666666664" y="0.0" width="307" height="298"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2eG-uo-ECe">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFK-RA-VSR">
-                                                    <rect key="frame" x="8" y="15" width="42" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-86-XbH">
+                                                    <rect key="frame" x="127" y="132" width="54" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="307" height="298"/>
                                         <connections>
-                                            <outlet property="liveLabel" destination="TFK-RA-VSR" id="VGn-EA-ffN"/>
+                                            <outlet property="myButton" destination="5M2-86-XbH" id="ygr-2y-1Uu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -416,6 +415,9 @@
                         <viewLayoutGuide key="safeArea" id="Jpg-v4-0lf"/>
                     </view>
                     <navigationItem key="navigationItem" id="rEU-if-DfQ"/>
+                    <connections>
+                        <outlet property="LiveCollectionView" destination="zFn-Fj-CoX" id="pyP-dS-dJc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbr-FZ-lDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -570,6 +572,9 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonTappedWithSender:" destination="RmR-7Q-FJN" eventType="touchUpInside" id="FlD-pf-l7O"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99993973970413208" green="1" blue="0.99988692998886108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -593,6 +598,8 @@
                     <navigationItem key="navigationItem" id="Pem-cY-iqA"/>
                     <connections>
                         <outlet property="YourCollectionView" destination="xYF-6r-OfR" id="qMW-El-L8b"/>
+                        <outlet property="collectionView" destination="xYF-6r-OfR" id="I1I-Od-eZB"/>
+                        <segue destination="bXZ-fM-jI6" kind="presentation" identifier="yourCol2Info" id="DH2-GV-zwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBy-9B-lqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -925,4 +932,7 @@
         <image name="water-can" width="512" height="512"/>
         <image name="wateringcan_icon" width="293" height="292"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DH2-GV-zwr"/>
+    </inferredMetricsTieBreakers>
 </document>

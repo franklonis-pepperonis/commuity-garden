@@ -14,20 +14,13 @@ private let reuseIdentifier = "ColCell"
 
 class YourCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // no ordered maps in swift, using keys array to order keys
     var keys: [String] = []
-    
     var plant2Info: [String: PlantInfo] = [:]
-    
+    var i: Int = 0
     let imageSize = CGSize(width: 160.0, height: 160.0)
-    
-    struct PlantInfo{
-        var amt: Int // amt user has in plant collection
-        var img: String? // name of image
-        var name: String // name of plant
-    }
     
     
     @IBOutlet weak var YourCollectionView: UICollectionView!
@@ -51,6 +44,7 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
                     let plantName = document.documentID
                     if self.plant2Info[plantName] != nil {
                         self.plant2Info[plantName]?.img = document.data()["img"] as! String
+                        self.plant2Info[plantName]?.description = document.data()["description"] as! String
                     }
                 }
                 collectionView.reloadData()
@@ -106,6 +100,9 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         }
         let amt = plantInfo?.amt ?? 0
         cell.amount.text = String(amt)
+        cell.myButton.tag = indexPath.item
+        let action = #selector(self.buttonAction)
+        cell.myButton.addTarget(self, action: action, for: .touchUpInside)
         // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         return cell
     }
@@ -117,4 +114,28 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? PlantInfoViewController{
+            let key = keys[self.i]
+            let plantInfo = self.plant2Info[key]!
+            dest.plantInfo = plantInfo
+        }
+    }
+    
+    @objc func buttonAction(_ sender: UIButton!) {
+        self.i = sender.tag
+        self.performSegue(withIdentifier: "yourCol2Info", sender: nil)
+    }
 }
+
+/* extension YourCollectionViewController: CollectionViewCellDelegate {
+    func collectionViewCell(_ cell: UICollectionViewCell, buttonTapped: UIButton) {
+        // You have the cell where the touch event happend, you can get the indexPath like the below
+        print("******HERE******")
+        print(self.collectionView.indexPath(for: cell)!.item)
+        self.i = self.collectionView.indexPath(for: cell)!.item
+        // Call `performSegue`
+        self.performSegue(withIdentifier: "yourCol2Info", sender: nil)
+    }
+} */

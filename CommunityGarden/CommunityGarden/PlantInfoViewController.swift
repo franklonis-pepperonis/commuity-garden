@@ -18,25 +18,32 @@ class PlantInfoViewController: UIViewController {
     
     @IBOutlet weak var PlantDescription: UITextView!
     
+    
+    var plantInfo: PlantInfo = PlantInfo(amt: 0, name: "")
+    
+    /* override func viewWillAppear(_ animated: Bool) {
+        print(plantInfo)
+        if let image = UIImage(named: self.plantInfo.img!){
+            self.PlantImage.image = image
+        }
+        self.PlantName.text = self.plantInfo.name
+        self.PlantDescription.text = self.plantInfo.description
+        super.viewWillAppear(animated)
+    } */
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.PlantImage.layer.cornerRadius = 20
         self.PlantName.layer.cornerRadius = 20
         self.PlantDescription.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
         
         // Set up firebase
-        let db = Firestore.firestore()
-        db.collection("Plant Info").document("Cactus").getDocument() { (document, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                let data = document!.data()
-                print("\(data!["Description"])")
-                self.PlantDescription.text = "\(data!["Description"])"
-            }
+        if let image = UIImage(named: self.plantInfo.img!){
+            self.PlantImage.image = image
         }
-
+        self.PlantName.text = self.plantInfo.name
+        self.PlantDescription.text = self.plantInfo.description
+        super.viewDidLoad()
     
     }
     

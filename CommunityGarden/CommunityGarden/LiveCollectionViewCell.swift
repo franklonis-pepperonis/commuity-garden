@@ -9,5 +9,5 @@
 import UIKit
 
 class LiveCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var liveLabel: UILabel!
+    @IBOutlet weak var myButton: UIButton!
 }
