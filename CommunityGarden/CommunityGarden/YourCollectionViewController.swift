@@ -25,11 +25,18 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var YourCollectionView: UICollectionView!
     
+    // To setup nav bar
+    @IBOutlet weak var coins: UILabel!
+    @IBOutlet weak var water: UILabel!
+    
     
     
     override func viewDidLoad(){
         getUserCollectionData(self.YourCollectionView)
         super.viewDidLoad();
+        
+        // To setup nav bar
+        self.setupNavBar()
     }
     
     func getPlantImages(_ collectionView: UICollectionView){
@@ -127,6 +134,26 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         self.i = sender.tag
         self.performSegue(withIdentifier: "yourCol2Info", sender: nil)
     }
+    
+    // To setup nav bar
+    func setupNavBar(){
+        let db = Firestore.firestore()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        db.collection("users").getDocuments() { (users, err) in
+            if let err = err {
+                print("Error loading users: \(err)")
+            } else {
+                let userId = delegate.cur_user!
+                for user in users!.documents {
+                    if user.documentID as String == userId {
+                        self.coins.text = String(user.data()["coins"] as! Int)
+                        self.water.text = String(user.data()["water_available"] as! Int)  + "%"
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 /* extension YourCollectionViewController: CollectionViewCellDelegate {

@@ -28,6 +28,10 @@ class PlantPlotViewController: UIViewController
     @IBOutlet weak var WaterButton: UIButton!
     @IBOutlet weak var ShovelButton: UIButton!
     
+    // To setup nav bar
+    @IBOutlet weak var coins: UILabel!
+    @IBOutlet weak var water: UILabel!
+    
     
     // should eventually hold plant info to display
     var plant_id : String?
@@ -36,6 +40,9 @@ class PlantPlotViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // To setup nav bar
+        setupNavBar()
         
         let db = Firestore.firestore()
     
@@ -165,6 +172,25 @@ class PlantPlotViewController: UIViewController
                         userWater -= 10
                         db.collection("users").document(userId).setData(["water_available": userWater], merge: true)
                         break
+                    }
+                }
+            }
+        }
+    }
+    
+    // To setup nav bar
+    func setupNavBar(){
+        let db = Firestore.firestore()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        db.collection("users").getDocuments() { (users, err) in
+            if let err = err {
+                print("Error loading users: \(err)")
+            } else {
+                let userId = delegate.cur_user!
+                for user in users!.documents {
+                    if user.documentID as String == userId {
+                        self.coins.text = String(user.data()["coins"] as! Int)
+                        self.water.text = String(user.data()["water_available"] as! Int)  + "%"
                     }
                 }
             }

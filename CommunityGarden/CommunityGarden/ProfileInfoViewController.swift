@@ -17,6 +17,7 @@ class ProfileInfoViewController: UIViewController{
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var collection: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         

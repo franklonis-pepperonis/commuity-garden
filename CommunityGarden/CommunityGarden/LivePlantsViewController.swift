@@ -31,11 +31,17 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var LiveCollectionView: UICollectionView!
     
+    // To setup nav bar
+    @IBOutlet weak var coins: UILabel!
+    @IBOutlet weak var water: UILabel!
+    
     
     
     override func viewDidLoad(){
         getUserPlantedData(self.LiveCollectionView)
         super.viewDidLoad();
+        // To setup nav bar
+        setupNavBar()
     }
     
     func getPlantInfo(_ collectionView: UICollectionView){
@@ -137,6 +143,26 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         viewController?.plant_id = key
         self.present(viewController!, animated: true, completion: nil)
     }
+    
+    // To setup nav bar
+    func setupNavBar(){
+        let db = Firestore.firestore()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        db.collection("users").getDocuments() { (users, err) in
+            if let err = err {
+                print("Error loading users: \(err)")
+            } else {
+                let userId = delegate.cur_user!
+                for user in users!.documents {
+                    if user.documentID as String == userId {
+                        self.coins.text = String(user.data()["coins"] as! Int)
+                        self.water.text = String(user.data()["water_available"] as! Int)  + "%"
+                    }
+                }
+            }
+        }
+    }
+    
     // Fuck around with this 2ma
     /* let storyboard = UIStoryboard(name: "Main", bundle: nil)
       

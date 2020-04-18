@@ -324,7 +324,9 @@
                     <navigationItem key="navigationItem" id="i6x-sE-uDQ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="coins" destination="e4k-fc-MJi" id="a6D-VI-D0g"/>
                         <outlet property="mapView" destination="WDL-bE-FqN" id="aHR-3k-8ow"/>
+                        <outlet property="water" destination="CeY-OW-R91" id="45b-wb-w9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-J7-Hbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +419,8 @@
                     <navigationItem key="navigationItem" id="rEU-if-DfQ"/>
                     <connections>
                         <outlet property="LiveCollectionView" destination="zFn-Fj-CoX" id="pyP-dS-dJc"/>
+                        <outlet property="coins" destination="UNq-4H-2gh" id="CAz-jA-Sf6"/>
+                        <outlet property="water" destination="wTK-BE-vXE" id="p0S-SK-L9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbr-FZ-lDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -432,39 +436,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkj-RB-Nsn" userLabel="Scene View">
-                                <rect key="frame" x="46" y="68" width="329" height="408"/>
+                                <rect key="frame" x="49" y="123" width="316" height="392"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </sceneKitView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXc-db-z1F">
-                                <rect key="frame" x="177" y="31" width="66" height="29"/>
+                                <rect key="frame" x="177" y="86" width="66" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-qV-hrg">
-                                <rect key="frame" x="46" y="501" width="85" height="30"/>
+                                <rect key="frame" x="58" y="523" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCX-J4-W08">
-                                <rect key="frame" x="46" y="556" width="85" height="30"/>
+                                <rect key="frame" x="58" y="578" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akQ-0d-98c">
-                                <rect key="frame" x="260" y="501" width="85" height="30"/>
+                                <rect key="frame" x="272" y="523" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20B-vM-g6K">
-                                <rect key="frame" x="59" y="616" width="72" height="68"/>
+                                <rect key="frame" x="71" y="638" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="wateringcan_icon"/>
                                 <connections>
@@ -472,17 +476,45 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QV-nN-ioF">
-                                <rect key="frame" x="268" y="614" width="69" height="70"/>
+                                <rect key="frame" x="280" y="636" width="69" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="shovel_icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFO-4U-pWu">
-                                <rect key="frame" x="260" y="556" width="85" height="30"/>
+                                <rect key="frame" x="272" y="578" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-di-1hQ" userLabel="Leaf Water Banner">
+                                <rect key="frame" x="0.0" y="2" width="414" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="bMy-Rz-yaa">
+                                        <rect key="frame" x="154" y="8" width="72" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water-can" translatesAutoresizingMaskIntoConstraints="NO" id="yGD-yk-2Io">
+                                        <rect key="frame" x="259" y="8" width="79" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="76%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-aF-rAp" userLabel="Water Percentage Label">
+                                        <rect key="frame" x="324" y="20" width="64" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGu-os-p1h" userLabel="Leaf Count Label">
+                                        <rect key="frame" x="223" y="19" width="38" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="i60-gH-khz"/>
@@ -491,7 +523,9 @@
                         <outlet property="PlantHealth" destination="EFO-4U-pWu" id="Xay-pi-yhO"/>
                         <outlet property="PlantName" destination="rXc-db-z1F" id="rt9-p2-DPw"/>
                         <outlet property="PlantOwner" destination="akQ-0d-98c" id="tpR-jL-vJe"/>
+                        <outlet property="coins" destination="iGu-os-p1h" id="Sru-Gc-4FG"/>
                         <outlet property="sceneView" destination="Qkj-RB-Nsn" id="a6B-h0-PHo"/>
+                        <outlet property="water" destination="JBa-aF-rAp" id="oaC-cT-15T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGI-OT-ahQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -595,10 +629,12 @@
                         <color key="backgroundColor" red="1" green="0.96546715500000002" blue="0.91507387159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="pkF-B3-qJP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Pem-cY-iqA"/>
+                    <navigationItem key="navigationItem" id="mwm-BH-6nT"/>
                     <connections>
                         <outlet property="YourCollectionView" destination="xYF-6r-OfR" id="qMW-El-L8b"/>
+                        <outlet property="coins" destination="1e6-h0-yol" id="E5P-eG-ziZ"/>
                         <outlet property="collectionView" destination="xYF-6r-OfR" id="I1I-Od-eZB"/>
+                        <outlet property="water" destination="irE-l6-5Z0" id="4cT-YQ-Bjs"/>
                         <segue destination="bXZ-fM-jI6" kind="presentation" identifier="yourCol2Info" id="DH2-GV-zwr"/>
                     </connections>
                 </viewController>
@@ -753,7 +789,9 @@
                         <viewLayoutGuide key="safeArea" id="CIr-Az-J3S"/>
                     </view>
                     <connections>
+                        <outlet property="coins" destination="FRi-uh-vSE" id="efZ-GM-rp9"/>
                         <outlet property="collectionView" destination="FkP-wS-erh" id="lXE-uS-SRl"/>
+                        <outlet property="water" destination="EQ7-vd-TfR" id="HD3-Uy-uY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0S-3L-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,6 +942,8 @@
                         <outlet property="PlantDescription" destination="8ja-Ow-UbE" id="uFW-s4-t36"/>
                         <outlet property="PlantImage" destination="pc9-jp-dLB" id="OVa-54-S6I"/>
                         <outlet property="PlantName" destination="R2V-fG-DfL" id="E2Y-Sl-wba"/>
+                        <outlet property="coins" destination="eb3-gH-bYi" id="hKO-v1-PCf"/>
+                        <outlet property="water" destination="cEV-4a-Tp0" id="33X-Gy-qMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhF-QQ-xe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1045,6 +1085,8 @@
                     <navigationItem key="navigationItem" id="MyI-Hq-dzj"/>
                     <connections>
                         <outlet property="YourCollectionPlantingView" destination="6ed-vz-12T" id="RkC-1L-Bw3"/>
+                        <outlet property="coins" destination="Rpq-Ia-qUu" id="4Ze-FC-v3B"/>
+                        <outlet property="water" destination="UpG-Rd-tdn" id="Wyx-bq-OUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UH1-7D-Rlt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

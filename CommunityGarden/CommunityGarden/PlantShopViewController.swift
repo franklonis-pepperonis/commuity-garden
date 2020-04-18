@@ -24,6 +24,10 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // To setup nav bar
+    @IBOutlet weak var coins: UILabel!
+    @IBOutlet weak var water: UILabel!
+    
     override func viewDidLoad() {
         self.getNumImages(collectionView) { (numImages, Images, Costs, Names) in
             self.num_items = numImages
@@ -32,6 +36,10 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
             self.names = Names
             self.collectionView.reloadData()
         }
+        
+        // To setup nav bar
+        setupNavBar()
+        
         super.viewDidLoad();
     }
     
@@ -150,5 +158,23 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
+    // To setup nav bar
+    func setupNavBar(){
+        let db = Firestore.firestore()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        db.collection("users").getDocuments() { (users, err) in
+            if let err = err {
+                print("Error loading users: \(err)")
+            } else {
+                let userId = delegate.cur_user!
+                for user in users!.documents {
+                    if user.documentID as String == userId {
+                        self.coins.text = String(user.data()["coins"] as! Int)
+                        self.water.text = String(user.data()["water_available"] as! Int)  + "%"
+                    }
+                }
+            }
+        }
+    }
 }
 
