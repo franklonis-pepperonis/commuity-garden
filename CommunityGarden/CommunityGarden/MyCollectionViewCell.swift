@@ -39,3 +39,32 @@ class MyCollectionViewCell: UICollectionViewCell {
         self.myButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }*/
 }
+
+
+class MyCollectionPlantingViewCell: UICollectionViewCell {
+    @IBOutlet weak var myButton: UIButton!
+    
+    @IBOutlet weak var amount: UILabel!
+    
+    
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        
+        print("initiated")
+    }
+    
+   
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        //setupViews()
+    }
+    
+    /*func setupViews(){
+        self.myButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        self.myButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }*/
+}

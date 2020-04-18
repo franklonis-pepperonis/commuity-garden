@@ -94,16 +94,20 @@ extension MapViewController: MKMapViewDelegate {
             if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 500 {
 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          
-                let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController
-        
-                if let mapAnnotation = view.annotation as? MapAnnotation {
+                
+                      let delegate = UIApplication.shared.delegate as! AppDelegate
+                      
+                      delegate.ar_view = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ARViewController
+                      
+                      let viewController = delegate.ar_view
+                      
+                      if let mapAnnotation = view.annotation as? MapAnnotation {
 
-                    viewController?.gardenID = mapAnnotation.item.garden_id
-                    //viewController?.garden = mapAnnotation.item
-                    //viewController?.userLocation = mapView.userLocation.location!
-                    self.present(viewController!, animated: true, completion: nil)
-                }
+                          viewController?.gardenID = mapAnnotation.item.garden_id
+                          //viewController?.garden = mapAnnotation.item
+                          //viewController?.userLocation = mapView.userLocation.location!
+                          self.present(viewController!, animated: true, completion: nil)
+                      }
         
             }
         }

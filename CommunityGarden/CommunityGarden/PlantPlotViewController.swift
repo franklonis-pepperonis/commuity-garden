@@ -108,7 +108,7 @@ class PlantPlotViewController: UIViewController
         if Int(self.PlantHealth.text!)! >= 100 {
             return
         }
-        let newHealth = String(Int(self.PlantHealth.text!)! + 10);
+        let newHealth = Int(self.PlantHealth.text!)! + 10;
         db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
         //update user water and coins
         //query plant id DB

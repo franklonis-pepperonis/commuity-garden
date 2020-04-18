@@ -18,11 +18,15 @@ import FirebaseFirestore
 class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var PlantButton: UIButton!
     var sceneController = PlantScene()
     
 
     var didInitializeScene: Bool = false
     var gardenID: String?
+    var PlantToPlant: String?
+    
+    
         
     
     override func viewDidLoad() {
@@ -44,6 +48,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ARViewController.didTapScreen))
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        
     }
     
     func renderGarden(){
@@ -104,9 +110,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @objc func didTapScreen(recognizer: UITapGestureRecognizer) {
         if didInitializeScene {
-            if (sceneView.session.currentFrame?.camera) != nil {
+            if let camera = (sceneView.session.currentFrame?.camera) {
                 let tapLocation = recognizer.location(in: sceneView)
                 let hitTestResults = sceneView.hitTest(tapLocation)
+                
+                
+                   
+                
                 if let node = hitTestResults.first?.node, let scene = sceneController.scene, let plant = node.topmost(until: scene.rootNode) as? PlantObject {
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -116,14 +126,77 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     viewController?.garden_id = self.gardenID
                     viewController?.plant_id = plant.plant_id
                     self.present(viewController!, animated: true, completion: nil)
-                
+                }
+                else {
+                    if PlantToPlant != nil{
+                          
+                        var translation = matrix_identity_float4x4
+                        translation.columns.3.z = -10.0
+                        translation.columns.3.y = -1.0
+                        let transform = camera.transform * translation
+                        let position = SCNVector3(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+                   
+                        let plant = PlantToPlant!
+                        // assign plant id
+                        let plant_id = String(Int.random(in: 0 ..< 100000))
+                        let plant_ar = "art.scnassets/" + plant + ".dae"
+                        // TODO
+                        
+                        // plant this plant where tapped
+                        
+                        // get the current user
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        let cur_user = appDelegate.cur_user as! String
+                        let db = Firestore.firestore()
+                        
+                        //decrement the quantity of the plant to be planted from this users collection
+                        let ref = db.collection("users").document(cur_user).collection("plants")
+                        ref.getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                for document in querySnapshot!.documents {
+                                    if document.documentID == plant {
+                                        var quantity = document.data()["quantity"] as! Int
+                                        
+                                        // remove from user collection if only one left
+                                        if (quantity == 1){
+                                            db.collection("users").document(cur_user).collection("plants").document(document.documentID).delete()
+                                        } else{
+                                            quantity = quantity - 1
+                                            // decrement quantity of plant
+                                            db.collection("users").document(cur_user).collection("plants").document(document.documentID).updateData(["quantity": quantity])
+                                        }
+                                       
+                                    }
+                                }
+                            }
+                        }
+                        
+                        //add this new plant to the plant IDs table with full health
+                        db.collection("plant IDs").document(plant_id).setData(
+                            ["garden": self.gardenID!, "health": 100, "name":plant, "owner":cur_user],
+                            merge:true
+                        );
+                        
+                        //add this new planted plant to the users living plants collection view
+                        db.collection("users").document(cur_user).collection("planted").document(plant_id).setData(["exists": true], merge:true);
+                        
+                        //add this planted plant to the garden database so it always renders in the same spot.
+                        db.collection("gardens").document(self.gardenID!).collection("plants").document(plant_id).setData(
+                            ["ar img": plant_ar, "plant id": plant_id, "x coord": String(Int(position.x)), "z coord": String(Int(position.z))]
+                        );
+                        
+                        
+                        self.sceneController.addPlant(position: position, ar_image: plant_ar, id: String(plant_id))
+                        
+                        PlantToPlant = nil
+                    }
+                    
                 }
             }
-            else {
-                
-            }
         }
-    
+
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {

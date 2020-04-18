@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?;
     var cur_user: String?;
+    var ar_view: ARViewController?;
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
