@@ -63,6 +63,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.shopImage.tag = indexPath.item
         cell.shopImage.addTarget(self, action: #selector(buyPlant), for: .touchUpInside)
         cell.cost.text = self.costs[indexPath.item]
+        cell.cost.textColor = UIColor.black
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         return cell
         
