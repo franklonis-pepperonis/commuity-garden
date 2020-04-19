@@ -82,6 +82,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
                 let alert = UIAlertController(title: "You just bought a plant!", message: "It is now in your collection.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.setupNavBar()
             }
         }
     }
