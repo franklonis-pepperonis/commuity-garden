@@ -38,6 +38,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
+        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+        
         // Create a new scene
         if let scene = sceneController.scene {
             // Set the scene to the view
@@ -92,6 +94,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        configuration.planeDetection = .horizontal
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -122,9 +126,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             if let camera = (sceneView.session.currentFrame?.camera) {
                 let tapLocation = recognizer.location(in: sceneView)
                 let hitTestResults = sceneView.hitTest(tapLocation)
-                
-                
-                   
+
                 
                 if let node = hitTestResults.first?.node, let scene = sceneController.scene, let plant = node.topmost(until: scene.rootNode) as? PlantObject {
                     
@@ -140,7 +142,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     if PlantToPlant != nil{
                           
                         var translation = matrix_identity_float4x4
-                        translation.columns.3.z = -10.0
+                        translation.columns.3.z = -3.0
                         translation.columns.3.y = -1.0
                         let transform = camera.transform * translation
                         let position = SCNVector3(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
