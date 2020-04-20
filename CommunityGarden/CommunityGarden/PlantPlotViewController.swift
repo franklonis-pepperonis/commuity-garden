@@ -119,7 +119,6 @@ class PlantPlotViewController: UIViewController
             return
         }
         
-        
         db.collection("plant IDs").getDocuments() { (allPlants, err) in
             if let err = err {
                 print("Error getting plants: \(err)")
@@ -132,7 +131,7 @@ class PlantPlotViewController: UIViewController
                         //find owner of plant
                         let owner = plant.data()["owner"] as! String
                         if owner == userId {
-                            break
+                            return
                         }
                         //query user db to find the correct owner
                         db.collection("users").getDocuments() { (users, err) in
@@ -165,9 +164,9 @@ class PlantPlotViewController: UIViewController
                 for user in users!.documents {
                     if user.documentID as String == userId {
                         //add 10 coins to owner of plants coins
-                        var userCoins = user.data()["coins"] as! Int
+                        //var userCoins = user.data()["coins"] as! Int
                         //update plant onwer coins in the database
-                        db.collection("users").document(userId).setData(["coins": userCoins], merge: true)
+                        //db.collection("users").document(userId).setData(["coins": userCoins], merge: true)
                         var userWater = user.data()["water_available"] as! Int
                         if(userWater <= 9){
                             let alert = UIAlertController(title: "Plant not watered", message: "You don't have enough water", preferredStyle: .alert)
