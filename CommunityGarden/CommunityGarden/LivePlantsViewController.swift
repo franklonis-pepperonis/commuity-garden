@@ -56,10 +56,8 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
                     let plantName = document.documentID
                     if self.plant2Info[plantName] != nil {
                         let name = document.data()["name"] as! String
-                        var img = name
-                        var c = String(img.remove(at: img.startIndex))
-                        c = c.lowercased()
-                        img = "shop_" + c + img
+                        var img = name.lowercased()
+                        img = "shop_" + img
                         let health = document.data()["health"] as! Double
                         let garden = document.data()["garden"] as! String
                         self.plant2Info[plantName]?.img = img
