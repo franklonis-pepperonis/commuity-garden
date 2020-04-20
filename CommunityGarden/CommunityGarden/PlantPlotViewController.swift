@@ -119,6 +119,8 @@ class PlantPlotViewController: UIViewController
             return
         }
         
+        var successful_planting = false
+        
         db.collection("plant IDs").getDocuments() { (allPlants, err) in
             if let err = err {
                 print("Error getting plants: \(err)")
@@ -155,6 +157,7 @@ class PlantPlotViewController: UIViewController
                 }
             }
         }
+        
         db.collection("users").getDocuments() { (users, err) in
             if let err = err {
                 print("Error updating user leaves: \(err)")
@@ -176,21 +179,48 @@ class PlantPlotViewController: UIViewController
                         }
                         userWater -= 10
                         db.collection("users").document(userId).setData(["water_available": userWater], merge: true)
+                        successful_planting = true
+                        
+                        var newHealth = (Int(self.PlantHealth.text!)! + 10)
+                        if (newHealth >= 100){
+                            newHealth = 100
+                        }
+                        
+                        db.collection("plant IDs").document(self.plant_id!).setData(["health": newHealth], merge:true);
+                        self.PlantHealth.text = String(newHealth)
+                        //update user water and coins
+                        //query plant id DB
+                        
+                        let alert = UIAlertController(title: "Plant watered!", message: "-10 water available. +10 plant health!", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        
                         break
                     }
                 }
             }
         }
+    
         
-        let newHealth = (Int(self.PlantHealth.text!)! + 10)%100;
-        db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
-        //update user water and coins
-        //query plant id DB
         
-        let alert = UIAlertController(title: "Plant watered!", message: "-10 water available. +10 plant health!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        while (successful_planting == true){
+            
         
+            var newHealth = (Int(self.PlantHealth.text!)! + 10)
+            if (newHealth >= 100){
+                newHealth = 100
+            }
+            db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
+            self.PlantHealth.text = String(newHealth)
+            //update user water and coins
+            //query plant id DB
+            
+            let alert = UIAlertController(title: "Plant watered!", message: "-10 water available. +10 plant health!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            break
+        }
         setupNavBar()
         
         
@@ -236,6 +266,14 @@ class PlantPlotViewController: UIViewController
                         self.water.text = String(user.data()["water_available"] as! Int)  + "%"
                     }
                 }
+            }
+        }
+        db.collection("plant IDs").document(plant_id!).getDocument() { (Plant, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                let health = Plant!.data()!["health"]
+                self.PlantHealth.text = "\(health!)"
             }
         }
     }
