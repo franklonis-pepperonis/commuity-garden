@@ -202,7 +202,7 @@ class PlantPlotViewController: UIViewController
                         delegate.map_view?.setupNavBar()
                         delegate.live_plants_view?.setupNavBar()
                         delegate.your_collection_view?.setupNavBar()
-                        
+                        self.setupNavBar()
                     
                         break
                     }
@@ -210,7 +210,7 @@ class PlantPlotViewController: UIViewController
             }
         }
     
-        
+        /*
         
         while (successful_planting == true){
             
@@ -230,6 +230,7 @@ class PlantPlotViewController: UIViewController
             break
         }
         setupNavBar()
+         */
         
         
     }
