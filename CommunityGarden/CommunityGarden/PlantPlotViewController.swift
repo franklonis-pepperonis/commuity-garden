@@ -178,6 +178,9 @@ class PlantPlotViewController: UIViewController
                             return
                         }
                         userWater -= 10
+                        if (userWater <= 0 ){
+                            userWater = 0
+                        }
                         db.collection("users").document(userId).setData(["water_available": userWater], merge: true)
                         successful_planting = true
                         
