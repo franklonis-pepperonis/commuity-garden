@@ -42,6 +42,7 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad();
         // To setup nav bar
         setupNavBar()
+        self.LiveCollectionView.backgroundColor = UIColor(red: 216/255.0, green: 248/255.0, blue: 149/255.0, alpha: 1)
     }
     
     func getPlantInfo(_ collectionView: UICollectionView){
@@ -56,10 +57,8 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
                     let plantName = document.documentID
                     if self.plant2Info[plantName] != nil {
                         let name = document.data()["name"] as! String
-                        var img = name
-                        var c = String(img.remove(at: img.startIndex))
-                        c = c.lowercased()
-                        img = "shop_" + c + img
+                        var img = name.lowercased()
+                        img = "shop_" + img
                         let health = document.data()["health"] as! Double
                         let garden = document.data()["garden"] as! String
                         self.plant2Info[plantName]?.img = img
@@ -122,6 +121,7 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         let action = #selector(self.buttonAction)
         cell.myButton.addTarget(self, action: action, for: .touchUpInside)
         // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     

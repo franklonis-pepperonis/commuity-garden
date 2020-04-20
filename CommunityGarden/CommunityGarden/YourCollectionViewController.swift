@@ -37,6 +37,7 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         
         // To setup nav bar
         self.setupNavBar()
+        self.YourCollectionView.backgroundColor = UIColor(red: 216/255.0, green: 248/255.0, blue: 149/255.0, alpha: 1)
     }
     
     func getPlantImages(_ collectionView: UICollectionView){
@@ -110,7 +111,8 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         cell.myButton.tag = indexPath.item
         let action = #selector(self.buttonAction)
         cell.myButton.addTarget(self, action: action, for: .touchUpInside)
-        // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        cell.backgroundColor = UIColor.clear // make cell more visible in our example project
+        cell.amount.textColor = UIColor.black
         return cell
     }
     
