@@ -39,7 +39,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // To setup nav bar
         setupNavBar()
-        self.collectionView.backgroundColor = UIColor.white
+        self.collectionView.backgroundColor = UIColor(red: 255/255.0, green: 228/255.0, blue: 121/255.0, alpha: 1)
         super.viewDidLoad();
     }
     
@@ -51,7 +51,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
    {
 //        let height = view.frame.size.height
 //        let width = view.frame.size.width
-    return CGSize(width: self.collectionView.frame.width * 0.4, height: self.collectionView.frame.height * 0.4)
+    return CGSize(width: self.collectionView.frame.width * 0.42, height: self.collectionView.frame.height * 0.46)
    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
