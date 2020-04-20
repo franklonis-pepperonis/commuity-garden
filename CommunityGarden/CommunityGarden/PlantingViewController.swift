@@ -44,6 +44,7 @@ class PlantingViewController: UIViewController, UICollectionViewDataSource, UICo
         
         // To setup nav bar
         self.setupNavBar()
+        self.YourCollectionPlantingView.backgroundColor = UIColor.white
     }
     
     func getPlantImages(_ collectionView: UICollectionView){
@@ -104,10 +105,10 @@ class PlantingViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let image = UIImage(named: plantInfo?.img ?? "") ?? nil
         if(image != nil){
-            let height = (cell.myButton.frame.size.height - imageSize.height) / 2
-            let width = (cell.myButton.frame.size.width - imageSize.width) / 2
+//            let height = (cell.myButton.frame.size.height - imageSize.height) / 2
+//            let width = (cell.myButton.frame.size.width - imageSize.width) / 2
             cell.myButton.setImage(image, for: UIControl.State.normal)
-            cell.myButton.frame = CGRect(x: 0, y: 0, width: self.imageSize.width * 0.85, height: self.imageSize.width * 0.85)
+            cell.myButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width * 0.4, height: self.view.frame.size.height * 0.4)
             cell.myButton.tag = indexPath.item
             cell.myButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         }else{
@@ -115,7 +116,7 @@ class PlantingViewController: UIViewController, UICollectionViewDataSource, UICo
         }
         let amt = plantInfo?.amt ?? 0
         cell.amount.text = String(amt)
-        // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        cell.backgroundColor = UIColor.clear // make cell more visible in our example project
         return cell
     }
     

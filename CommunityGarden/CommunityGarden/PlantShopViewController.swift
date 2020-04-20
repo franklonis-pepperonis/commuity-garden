@@ -39,7 +39,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // To setup nav bar
         setupNavBar()
-        self.collectionView.backgroundColor = UIColor(red: 255/255.0, green: 228/255.0, blue: 121/255.0, alpha: 1)
+        self.collectionView.backgroundColor = UIColor(red: 179/255.0, green: 218/255.0, blue: 237/255.0, alpha: 1)
         super.viewDidLoad();
     }
     
