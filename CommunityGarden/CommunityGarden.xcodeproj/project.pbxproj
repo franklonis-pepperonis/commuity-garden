@@ -452,7 +452,7 @@
 				DEVELOPMENT_TEAM = T285G67975;
 				INFOPLIST_FILE = CommunityGarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardensss123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -470,7 +470,7 @@
 				DEVELOPMENT_TEAM = T285G67975;
 				INFOPLIST_FILE = CommunityGarden/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardensss123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FrankPepps.CommunityGardens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
