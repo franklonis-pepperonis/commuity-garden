@@ -115,10 +115,7 @@ class PlantPlotViewController: UIViewController
         if Int(self.PlantHealth.text!)! >= 100 {
             return
         }
-        let newHealth = Int(self.PlantHealth.text!)! + 10;
-        db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
-        //update user water and coins
-        //query plant id DB
+        
         
         db.collection("plant IDs").getDocuments() { (allPlants, err) in
             if let err = err {
@@ -169,6 +166,12 @@ class PlantPlotViewController: UIViewController
                         //update plant onwer coins in the database
                         db.collection("users").document(userId).setData(["coins": userCoins], merge: true)
                         var userWater = user.data()["water_available"] as! Int
+                        if(userWater <= 9){
+                            let alert = UIAlertController(title: "Plant not watered", message: "You don't have enough water", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            return
+                        }
                         userWater -= 10
                         db.collection("users").document(userId).setData(["water_available": userWater], merge: true)
                         break
@@ -176,6 +179,19 @@ class PlantPlotViewController: UIViewController
                 }
             }
         }
+        
+        let newHealth = Int(self.PlantHealth.text!)! + 10;
+        db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
+        //update user water and coins
+        //query plant id DB
+        
+        let alert = UIAlertController(title: "Plant watered!", message: "-10 water available. +10 plant health!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        setupNavBar()
+        
+        
     }
     
     @IBAction func shovelButton(button: UIButton)
