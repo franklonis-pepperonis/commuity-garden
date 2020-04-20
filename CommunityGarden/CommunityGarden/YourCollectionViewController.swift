@@ -99,15 +99,15 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         
         let image = UIImage(named: plantInfo?.img ?? "") ?? nil
         if(image != nil){
-            let height = (cell.myButton.frame.size.height - imageSize.height) / 2
-            let width = (cell.myButton.frame.size.width - imageSize.width) / 2
+//            let height = (cell.myButton.frame.size.height - imageSize.height) / 2
+//            let width = (cell.myButton.frame.size.width - imageSize.width) / 2
             cell.myButton.setImage(image, for: UIControl.State.normal)
             cell.myButton.frame = CGRect(x: 0, y: 0, width: self.imageSize.width * 0.85, height: self.imageSize.width * 0.85)
         }else{
             cell.myButton.setTitle("image error", for: UIControl.State.normal)
         }
         let amt = plantInfo?.amt ?? 0
-        cell.amount.text = String(amt)
+        cell.amount.text = "x " + String(amt)
         cell.myButton.tag = indexPath.item
         let action = #selector(self.buttonAction)
         cell.myButton.addTarget(self, action: action, for: .touchUpInside)

@@ -758,13 +758,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="259"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-eD-AVT">
-                                                    <rect key="frame" x="49" y="132" width="33" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4US-A9-DkB">
                                                     <rect key="frame" x="0.0" y="0.0" width="328" height="259"/>
                                                     <constraints>
@@ -779,9 +772,21 @@
                                                         <action selector="buttonTappedWithSender:" destination="RmR-7Q-FJN" eventType="touchUpInside" id="FlD-pf-l7O"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-eD-AVT">
+                                                    <rect key="frame" x="253" y="219" width="60" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="67v-ik-yjL"/>
+                                                        <constraint firstAttribute="width" constant="60" id="eIz-5K-0XZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ruv-eD-AVT" secondAttribute="bottom" constant="15" id="BMB-9q-kRk"/>
                                                 <constraint firstAttribute="trailing" secondItem="4US-A9-DkB" secondAttribute="trailing" id="FbQ-eL-qYa"/>
+                                                <constraint firstAttribute="trailing" secondItem="ruv-eD-AVT" secondAttribute="trailing" constant="15" id="Stz-7H-bGg"/>
                                                 <constraint firstItem="4US-A9-DkB" firstAttribute="top" secondItem="PUw-ZL-Dcj" secondAttribute="top" id="mf8-LN-Wtj"/>
                                                 <constraint firstAttribute="bottom" secondItem="4US-A9-DkB" secondAttribute="bottom" id="pIf-4v-lEQ"/>
                                                 <constraint firstItem="4US-A9-DkB" firstAttribute="leading" secondItem="PUw-ZL-Dcj" secondAttribute="leading" id="yTc-Sk-CI6"/>
