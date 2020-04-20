@@ -39,7 +39,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // To setup nav bar
         setupNavBar()
-        
+        self.collectionView.backgroundColor = UIColor.white
         super.viewDidLoad();
     }
     
@@ -49,7 +49,9 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
    {
-      return CGSize(width: 150.0, height: 200.0)
+//        let height = view.frame.size.height
+//        let width = view.frame.size.width
+    return CGSize(width: self.collectionView.frame.width * 0.4, height: self.collectionView.frame.height * 0.4)
    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,7 +66,7 @@ class PlantShopViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.shopImage.addTarget(self, action: #selector(buyPlant), for: .touchUpInside)
         cell.cost.text = self.costs[indexPath.item]
         cell.cost.textColor = UIColor.black
-        cell.backgroundColor = UIColor.white // make cell more visible in our example project
+        cell.backgroundColor = UIColor.clear // make cell more visible in our example project
         return cell
         
     }
