@@ -113,6 +113,9 @@ class PlantPlotViewController: UIViewController
         let db = Firestore.firestore();
         //update health of plant, if its not 100 already
         if Int(self.PlantHealth.text!)! >= 100 {
+            let alert = UIAlertController(title: "Plant not watered!", message: "This plant is already at full health!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -180,7 +183,7 @@ class PlantPlotViewController: UIViewController
             }
         }
         
-        let newHealth = Int(self.PlantHealth.text!)! + 10;
+        let newHealth = (Int(self.PlantHealth.text!)! + 10)%100;
         db.collection("plant IDs").document(plant_id!).setData(["health": newHealth], merge:true);
         //update user water and coins
         //query plant id DB
