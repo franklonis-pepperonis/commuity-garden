@@ -81,8 +81,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    func deleteGarden(){
+        self.sceneController.removePlants()
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
+
         super.viewWillAppear(animated)
         
         // Create a session configuration
@@ -90,10 +95,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
 
         // Run the view's session
         sceneView.session.run(configuration)
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
+        self.viewDidLoad()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -143,6 +152,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                         // TODO
                         
                         // plant this plant where tapped
+                        
                         
                         // get the current user
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -265,6 +275,13 @@ struct PlantScene {
         let plant = PlantObject(from: ar_image, id: id)
         plant.position = position
         scene.rootNode.addChildNode(plant)
+    }
+    func removePlants(){
+        guard let scene = self.scene else { return }
+        
+        scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
     }
 }
 

@@ -178,6 +178,31 @@ class PlantPlotViewController: UIViewController
         }
     }
     
+    @IBAction func shovelButton(button: UIButton)
+    {
+        
+        // remove plant from living plants of user
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let cur_user = appDelegate.cur_user as! String
+        let db = Firestore.firestore()
+        db.collection("users").document(cur_user).collection("planted").document(self.plant_id!).delete()
+                        
+        // remove plant from plants database
+        db.collection("plant IDs").document(self.plant_id!).delete()
+        
+        // remove plant_id from garden database
+        db.collection("gardens").document(self.garden_id!).collection("plants").document(self.plant_id!).delete()
+        
+        let alert = UIAlertController(title: "You just removed a plant!", message: "It is now gone from the garden.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        appDelegate.ar_view?.deleteGarden()
+        appDelegate.ar_view?.renderGarden()
+        //self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     // To setup nav bar
     func setupNavBar(){
         let db = Firestore.firestore()
