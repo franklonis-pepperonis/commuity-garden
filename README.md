@@ -21,29 +21,55 @@ Our current project is stored in a folder called CommunityGarden which stores ou
    
       |-----CommunityGarden                                          #SRC for CommunityGarden
       
+            |------ARViewController.swift                            #View Controller for AR Plant View
+            
             |------Assets.xcassets                                   #Pictures and Icons for the xCode Project
-            
-            |------Base.lproj                                        #Storyboards for Project
-            
-            |------ARItem.swift                                      #SRC for Garden AR object
             
             |------AppDelegate.swift                                 #Basic Xcode Functionality
             
+            |------Base.lproj                                        #Storyboards for Project
+            
+            |------GoogleServices-info.plist                         #Info for firebase
+            
+            |------Item.swift                                        #SRC for different custom objects in CommunityGarden
+            
             |------Info.plist                                        #Functionality for Location Services
+            
+            |------LiveCollectionViewCell.swift                      #Individual Cell for Life Collection View
             
             |------LivePlantsViewController.swift                    #View Controller for Toggle Button View
             
+            |------LoginViewController.swift                         #View Controller for Login Screen
+            
             |------MapAnnotation.swift                               #SRC for MapKit Location Services
+            
+            |------MapViewController.swift                           #View Controller for Map Landing Screen
+            
+            |------MyCollectionViewController.swift                  #View Controller for a Users Collection of Plants
+            
+            |------MyCollectionViewCell.swift                        #Individual Cell for displaying collection view
             
             |------PlantInfoViewController.swift                     #View Controller for Plant Information View
             
+            |------PlantPlotViewController.swift                     #View Controller for handling plant plots
+            
+            |------PlantShopViewCell.swift                           #Cell for individual plants in the shop
+            
             |------PlantShopViewController.swift                     #View Controller for Plant Shop Information View
+            
+            |------PlantingViewController.swift                      #View Controller for planting plants
             
             |------ProfileInfoViewController.swift                   #View Controller for User Profile View
             
+            |------SignUpViewController.swift                        #View Controller for User Registration View
+            
+            |------StartViewController.swift                         #Load first view
+            
+            |------Utilities.swift                                   #Extraneous querie
+            
             |------ViewController.swift                              #Default View Controller
             
-            |------YourCollectionViewController.swift                #View Controller for User Plant Collection
+            |------YourCollectionViewController.swift                #View Controller for User Plant Collection                        
             
 |-----Resources                                                      
    
@@ -53,6 +79,3 @@ Build Instructions:
 
 To Build and Run the project, open the project in xCode and run it. It should show up in the xCode Simulator. 
   ***This will be updated after the MVP stage, where we will explain instructions to download and run the app on the phone. 
-
-
-*** We implemented our AR portion seperately, but we ended up having trouble merging the two of them together. They both work seperately, but we hit a massive roadblock combining the two. 
