@@ -198,7 +198,12 @@ class PlantPlotViewController: UIViewController
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                         
+                        let delegate = UIApplication.shared.delegate as! AppDelegate
+                        delegate.map_view?.setupNavBar()
+                        delegate.live_plants_view?.setupNavBar()
+                        delegate.your_collection_view?.setupNavBar()
                         
+                    
                         break
                     }
                 }

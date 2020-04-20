@@ -38,6 +38,9 @@ class YourCollectionViewController: UIViewController, UICollectionViewDataSource
         // To setup nav bar
         self.setupNavBar()
         self.YourCollectionView.backgroundColor = UIColor(red: 216/255.0, green: 248/255.0, blue: 149/255.0, alpha: 1)
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.your_collection_view = self.self
     }
     
     func getPlantImages(_ collectionView: UICollectionView){

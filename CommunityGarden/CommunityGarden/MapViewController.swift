@@ -22,11 +22,19 @@ class MapViewController: UIViewController {
     
     
     @IBAction func backToMapView( _ segue: UIStoryboardSegue) {
-        
+        setupNavBar()
     }
     
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        setupNavBar()
+        
+        
+    }
 
     
     override func viewDidLoad() {
@@ -45,6 +53,10 @@ class MapViewController: UIViewController {
         
         // To setup nav bar
         setupNavBar()
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.map_view = self.self
+        
     }
 
     func setupLocations() {

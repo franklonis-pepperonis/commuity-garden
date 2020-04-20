@@ -43,6 +43,9 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         // To setup nav bar
         setupNavBar()
         self.LiveCollectionView.backgroundColor = UIColor(red: 216/255.0, green: 248/255.0, blue: 149/255.0, alpha: 1)
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.live_plants_view = self.self
     }
     
     func getPlantInfo(_ collectionView: UICollectionView){
