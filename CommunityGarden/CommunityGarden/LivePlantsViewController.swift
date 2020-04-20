@@ -42,6 +42,7 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad();
         // To setup nav bar
         setupNavBar()
+        self.LiveCollectionView.backgroundColor = UIColor(red: 216/255.0, green: 248/255.0, blue: 149/255.0, alpha: 1)
     }
     
     func getPlantInfo(_ collectionView: UICollectionView){
@@ -120,6 +121,7 @@ class LivePlantsViewController: UIViewController, UICollectionViewDataSource, UI
         let action = #selector(self.buttonAction)
         cell.myButton.addTarget(self, action: action, for: .touchUpInside)
         // cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
